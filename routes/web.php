@@ -1,9 +1,10 @@
 <?php
 
-use App\Http\Controllers\RegisterController;
-use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\LoginMemberController;
+use App\Http\Controllers\AuthController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\HomeController;
+use Illuminate\Support\Facades\Route;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -14,16 +15,14 @@ use App\Http\Controllers\DashboardController;
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::get('/', function () {
-    return view('home');
+
+Route::get('/', [HomeController::class,'index'])->name('home');
+Route::get('/login', [AuthController::class,'index'])->name('login');
+Route::post('/login', [AuthController::class,'signin'])->name('login-proses');
+Route::get('/register', [AuthController::class,'register'])->name('register');
+Route::post('/register', [AuthController::class,'store'])->name('register-proses');
+
+Route::middleware(['auth'])->group(function(){
+    Route::get('/dashboard',[DashboardController::class,'index'])->name('dashboard');
+    Route::get('/logout', [AuthController::class,'destroy'])->name('logout');
 });
-
-Route::get('/register',[RegisterController::class, 'index'])->name('register');
-Route::post('/register',[RegisterController::class, 'store'])->name('register-proses');
-
-Route::get('/login',[LoginMemberController::class, 'index'])->name('login');
-Route::post('/login',[LoginMemberController::class, 'store'])->name('login-proses');
-
-Route::get('dashboard', 'App\Http\Controllers\DashboardController@index');
-// Route::get('/dashboard',[DasboardController::class, 'index'])->name('dashboard');
-Route::post('/dashboard',[LoginMemberController::class, 'store'])->name('dashboard-proses');

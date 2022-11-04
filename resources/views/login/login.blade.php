@@ -22,7 +22,7 @@
             <button type="submit" class="btn btn-primary btn-block mb-1">Login</button>
 
             <div class="text-center">
-                <a href="#">Forgot Password?</a><p>Not a Member? <a href="#">Register</a></p>
+                <a href="#">Forgot Password?</a><p>Not a Member? <a href="register">Register</a></p>
             </div>
             <br>
         </form>

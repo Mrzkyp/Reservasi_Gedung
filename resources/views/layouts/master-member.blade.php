@@ -84,9 +84,9 @@
                 <div class="col-4 d-flex justify-content-end align-items-center">
                     <div class="nav-scroller py-1 mb-2">
                         <nav class="nav d-flex justify-content-between">
-                            @if (Str::length(Auth::guard('member')->user()) >0 )
-                                {{ Auth::guard('member')->user()->name }}
-                                <a class="btn btn-sm btn-outline-secondary" href="logout">Log out</a>
+                            @if (Str::length(auth()->user()) > 0)
+                                {{ auth()->user()->name }}&nbsp;
+                                <a class="btn btn-sm btn-outline-secondary" href="{{asset('logout')}}">Log out</a>
                             @else
                                 <a class="btn btn-sm btn-outline-secondary" href="login">Log in</a>
                                 <a class="btn btn-sm btn-outline-secondary" href="register">Register</a>
@@ -99,58 +99,33 @@
     </div>
     </div>
 
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <div class="container-fluid">
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText"
-                aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="container col-9 mx-auto">
-                <div class="collapse navbar-collapse" id="navbarText">
-                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                        <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="#">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Jadwal</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Pemesanan</a>
-                        </li>
-                    </ul>
-                </div>
+    <div class="nav-scroller">
+        <div class="row">
+            <div class="col">
+                <nav class="nav d-flex flex-row">
+                    <h3>Abral</h3>
+                </nav>
+            </div>
+            <div class="col">
+                <nav class="nav d-flex flex-row-reverse">
+                    @if (Str::length(auth()->user()) > 0)
+                        <a class="p-2 link-secondary" href="">History</a>
+                        <a class="p-2 link-secondary" href="">Reservasi</a>
+                        <a class="p-2 link-secondary" href="">jadwal</a>
+                        <a class="p-2 link-secondary" href="">pemesanan</a>
+                        <a class="p-2 link-secondary" href="">home</a>
+                    @else
+                        <a class="p-2 link-secondary" href="">home</a>
+                        <a class="p-2 link-secondary" href="">jadwal</a>
+                        <a class="p-2 link-secondary" href="">pemesanan</a>
+                    @endif
+                </nav>
             </div>
         </div>
-    </nav>
 
-    <div class="container">
-        <div class="bd-example">
-            <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
-                <div class="carousel-inner">
-                    <div class="carousel-item active">
-                        <img src="{{ asset('assets/img/abral.jpg') }}" class="d-block w-100" width="130"
-                            alt="...">
-                    </div>
-                    <div class="carousel-item active">
-                        <img src="{{ asset('assets/img/foto.jpg') }}" class="d-block w-100" alt="...">
-                    </div>
-                    <div class="carousel-item active">
-                        <img src="{{ asset('assets/img/abral2.png') }}" class="d-block w-100" alt="...">
-                    </div>
-                </div>
-                <<button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls"
-                    data-bs-slide="prev">
-                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                    <span class="visually-hidden">Previous</span>
-                    </button>
-                    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls"
-                        data-bs-slide="next">
-                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                        <span class="visually-hidden">Next</span>
-                    </button>
-            </div>
-        </div>
     </div>
+
+
 
     <main class="container">
         <div class="col-md-6 bg">

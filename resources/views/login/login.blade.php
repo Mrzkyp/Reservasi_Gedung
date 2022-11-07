@@ -12,11 +12,11 @@
             <br>
             <div class="form-outline mb-2">
                 <label class="form-label" for="email">Email</label>
-                <input name="email" type="text" id="email" class="form-control">
+                <input name="email" type="text" id="email" class="form-control" placeholder="@gmail.com">
             </div>
             <div class="form-outline mb-2">
                 <label class="form-label" for="form2Example2">Password</label>
-                <input name="password" type="password" id="form2Example2" class="form-control"/>
+                <input name="password" type="password" id="form2Example2" class="form-control" placeholder="password">
             </div>
 
             <button type="submit" class="btn btn-primary btn-block mb-1">Login</button>

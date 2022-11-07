@@ -15,8 +15,4 @@ class DashboardController extends Controller
         return view('member.dashboard');
     }
 
-    public function store(Request $request)
-    {
-        //
-    }
 }

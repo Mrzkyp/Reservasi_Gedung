@@ -88,6 +88,7 @@
                                 {{ auth()->user()->name }}&nbsp;
                                 <a class="btn btn-sm btn-outline-secondary" href="{{asset('logout')}}">Log out</a>
                             @else
+                                <a class="btn btn-sm btn-outline-secondary" href="login-admin">Log in admin</a>
                                 <a class="btn btn-sm btn-outline-secondary" href="login">Log in</a>
                                 <a class="btn btn-sm btn-outline-secondary" href="register">Register</a>
                             @endif
@@ -102,22 +103,17 @@
     <div class="nav-scroller">
         <div class="row">
             <div class="col">
-                <nav class="nav d-flex flex-row">
-                    <h3>Abral</h3>
-                </nav>
             </div>
             <div class="col">
                 <nav class="nav d-flex flex-row-reverse">
                     @if (Str::length(auth()->user()) > 0)
                         <a class="p-2 link-secondary" href="">History</a>
-                        <a class="p-2 link-secondary" href="">Reservasi</a>
-                        <a class="p-2 link-secondary" href="">jadwal</a>
-                        <a class="p-2 link-secondary" href="">pemesanan</a>
-                        <a class="p-2 link-secondary" href="">home</a>
+                        <a class="p-2 link-secondary" href="{{asset('reservasi')}}">Reservasi</a>
+                        <a class="p-2 link-secondary" href="">Jadwal</a>
                     @else
-                        <a class="p-2 link-secondary" href="">home</a>
-                        <a class="p-2 link-secondary" href="">jadwal</a>
-                        <a class="p-2 link-secondary" href="">pemesanan</a>
+                        <a class="p-2 link-secondary" href="">Home</a>
+                        <a class="p-2 link-secondary" href="">Jadwal</a>
+                        <a class="p-2 link-secondary" href="">Pemesanan</a>
                     @endif
                 </nav>
             </div>

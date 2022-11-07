@@ -8,14 +8,16 @@ use App\Models\User;
 use Illuminate\Support\Str;
 
 
+
 use Illuminate\Support\Facades\Auth;
 
 class AuthController extends Controller
 {
+    //login
     public function index(){
         return view('login.login');
     }
-
+//login proses
     public function signin(Request $request)
     {
         $input = $request->all();
@@ -25,12 +27,12 @@ class AuthController extends Controller
         }
         return redirect('/login');
     }
-
+//register
     public function register()
     {
         return view('register.register');
     }
-
+//proses register
     public function store(Request $request)
     {
         member::create([
@@ -42,10 +44,36 @@ class AuthController extends Controller
         ]);
         return redirect('/login');
     }
-
+//logout member
     public function destroy()
     {
-        (Str::length(auth()->user()) > 0);
+        Auth::logout();
+        request()->session()->invalidate();
+        request()->session()->regenerateToken();
         return redirect('/');
     }
+//Reservasi member
+    public function pesan()
+    {
+        return view('member.reservasi');
+    }
+
+
+// login admin
+    public function index1()
+{
+    return view('login.login-admin');
+}
+
+
+// //login proses admin
+public function store1(Request $request)
+{
+    $input = $request->all();
+        dd(Auth::attempt(['email' => $input['email'],'password' => $input['password']]));
+        // if (Auth::attempt(['email' => $input['email'],'password' => $input['password']])) {
+        //     return redirect('/dashboard-admin');
+        // }
+        // return redirect('/login-admin');
+}
 }

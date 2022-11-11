@@ -76,7 +76,7 @@
   <body class="text-center">
     
 <main class="form-signin w-100 m-auto">
-  <form action="{{route ('login-admin-proses')}}" method="post">    
+  <form action="{{route('login-admin-proses')}}" method="post">    
     @csrf
     <img class="mb-4" src="{{ asset ('assets/brand/bootstrap-logo.svg') }}" alt="" width="72" height="57">
     <h1 class="h3 mb-3 fw-normal">Please sign in</h1>

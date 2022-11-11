@@ -14,10 +14,7 @@ class Admin extends Model
  *
  * @return void
  */
-    public function boot()
-{
-    Model::preventLazyLoading(! $this->app->isProduction());
-}
+  
     protected $fillable =[
         'name',
         'email',

@@ -15,6 +15,7 @@ class member extends Model
         'alamat',
         'notelepon',
         'password',
+        'role',
     ];
 
     protected $hidden = [

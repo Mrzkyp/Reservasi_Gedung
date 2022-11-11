@@ -21,6 +21,7 @@ class AuthController extends Controller
     public function signin(Request $request)
     {
         $input = $request->all();
+        // User::where("email",  $input->email)
         // dd(Auth::attempt(['email' => $input['email'],'password' => $input['password']]));
         if (Auth::attempt(['email' => $input['email'],'password' => $input['password']])) {
             return redirect('/dashboard');
@@ -41,6 +42,7 @@ class AuthController extends Controller
             'alamat' => $request->alamat,
             'notelepon' => $request->notelepon,
             'password' => bcrypt($request->password),
+            "role"=>"member",
         ]);
         return redirect('/login');
     }
@@ -57,8 +59,12 @@ class AuthController extends Controller
     {
         return view('member.reservasi');
     }
-
-
+    
+    public function jadwal1()
+    {
+        return view('member.jadwalMember');
+    }
+    
 // login admin
     public function index1()
 {
@@ -70,10 +76,13 @@ class AuthController extends Controller
 public function store1(Request $request)
 {
     $input = $request->all();
-        dd(Auth::attempt(['email' => $input['email'],'password' => $input['password']]));
-        // if (Auth::attempt(['email' => $input['email'],'password' => $input['password']])) {
-        //     return redirect('/dashboard-admin');
-        // }
-        // return redirect('/login-admin');
+        // dd(Auth::attempt(['email' => $input['email'],'password' => $input['password']]));
+        if (Auth::attempt(['email' => $input['email'],'password' => $input['password'], 'role' => 'admin'])) {
+            return redirect('/dashboard-admin');
+        } else{
+        return redirect('/login-admin');
 }
+}
+
+
 }

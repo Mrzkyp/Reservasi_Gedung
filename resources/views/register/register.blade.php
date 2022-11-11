@@ -11,23 +11,23 @@
             @csrf
             <div class="form-outline mb-2">
                 <label class="form-label" for="name">Nama</label>
-                <input name="name" type="text" id="name" class="form-control">
+                <input name="name" type="text" id="name" class="form-control" placeholder="Masukan Nama">
             </div>
             <div class="form-outline mb-2">
                 <label class="form-label" for="email">Email</label>
-                <input name="email" type="text" id="email" class="form-control">
+                <input name="email" type="text" id="email" class="form-control" placeholder="Masukan Email">
             </div>
             <div class="form-outline mb-2">
                 <label class="form-label" for="alamat">Alamat</label>
-                <textarea name="alamat" class="form-control" id="alamat"></textarea>
+                <textarea name="alamat" class="form-control" id="alamat" placeholder="Masukan Alamat"></textarea>
             </div>
             <div class="form-outline mb-2">
                 <label class="form-label" for="notelepon">No Telepon</label>
-                <input name="notelepon" type="number" id="notelepon" class="form-control">
+                <input name="notelepon" type="number" id="notelepon" class="form-control" placeholder="No telepon">
             </div>
             <div class="form-outline mb-2">
                 <label class="form-label" for="form2Example2">Password</label>
-                <input name="password" type="password" id="form2Example2" class="form-control"/>
+                <input name="password" type="password" id="form2Example2" class="form-control" placeholder="password">
             </div>
 
             <button type="submit" class="btn btn-primary btn-block mb-1">register</button>

@@ -8,7 +8,7 @@
     <div class="col-4"></div>
     <div class="col-4">
         <center>
-        <form action="{{route('register-proses')}}" method="post">
+        <form action="" method="post">
             @csrf
             <div class="form-outline mb-2">
                 <label class="form-label" for="name">Nama</label>
@@ -24,15 +24,15 @@
             </div>
             <div class="form-outline mb-2">
                 <label class="form-label" for="hari/tanggal">Hari/Tanggal</label>
-                <input name="hari/tanggal" type="date" class="form-control" id="hari/tanggal" placeholder="Masukan hari/tanggal">
+                <textarea name="hari_tanggal" class="form-control" id="hari_tanggal" placeholder="Masukan hari/tanggal"></textarea>
             </div>
             <div class="form-outline mb-2">
                 <label class="form-label" for="waktu">Waktu</label>
-                <input name="waktu" type="time" class="form-control" id="waktu" placeholder="Masukan waktu">
+                <textarea name="waktu" class="form-control" id="waktu" placeholder="Masukan waktu"></textarea>
             </div>
             <div class="form-outline mb-2">
                 <label class="form-label" for="keterangan">Keterangan</label>
-                <input name="keterangan" type="text" class="form-control" id="keterangan" placeholder="Masukan keterangan">
+                <textarea name="keterangan" class="form-control" id="keterangan" placeholder="Masukan keterangan"></textarea>
             </div>
 
             <button type="submit" class="btn btn-primary btn-block mb-1">kirim</button>

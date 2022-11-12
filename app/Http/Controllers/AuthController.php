@@ -15,7 +15,7 @@ class AuthController extends Controller
 {
     //login
     public function index(){
-        return view('login.login'); 
+        return view('login.login');
     }
 //login proses
     public function signin(Request $request)
@@ -24,7 +24,7 @@ class AuthController extends Controller
         // User::where("email",  $input->email)
         // dd(Auth::attempt(['email' => $input['email'],'password' => $input['password']]));
         if (Auth::attempt(['email' => $input['email'],'password' => $input['password']])) {
-            return redirect('/');
+            return redirect('/dashboard');
         }
         return redirect('/login');
     }
@@ -60,6 +60,7 @@ class AuthController extends Controller
         return view('member.reservasi');
     }
     
+//jadwal member
     public function jadwal1()
     {
         return view('member.jadwalMember');
@@ -71,11 +72,6 @@ class AuthController extends Controller
     return view('login.login-admin');
 }
 
-// profil member
-public function profil()
-{
-    return view('member.profil');
-}
 
 // //login proses admin
 public function store1(Request $request)
@@ -87,6 +83,24 @@ public function store1(Request $request)
         } else{
         return redirect('/login-admin');
 }
+}
+
+//mengelola jadwal
+public function jadwal2()
+{
+    return view('admin.jadwal_reservasi');
+}
+
+//mengelola status pemesanan
+public function order()
+{
+    return view('admin.status_pemesanan');
+}
+
+//mengelola profil
+public function profil()
+{
+    return view('admin.profil');
 }
 
 

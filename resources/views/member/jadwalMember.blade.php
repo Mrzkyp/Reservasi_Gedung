@@ -2,7 +2,7 @@
 @section('title', 'jadwal')
 @section('content')
 
-<h1>Ini Halaman Resevasi Member</h1>
+<h1>Ini Halaman Jadwal Reservasi</h1>
 <table class="table">
     <thead>
         <tr>

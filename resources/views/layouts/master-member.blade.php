@@ -74,7 +74,7 @@
 
 <body>
 
-    <header class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0 shadow">
+    <header class="navbar navbar-blue sticky-top bg-green flex-md-nowrap p-0 shadow">
         <a class="navbar-brand col-md-3 col-lg-2 me-0 px-3 fs-6">Reservasi Gedung Abral</a>
         <button class="navbar-toggler position-absolute d-md-none collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -91,7 +91,7 @@
                     <a class="btn btn-sm btn-outline-secondary" href="login">Log in</a>
                     <a class="btn btn-sm btn-outline-secondary" href="register">Register</a>
                     @endif
-                </nav>
+
             </div>
         </div>
     </header>
@@ -106,30 +106,26 @@
             <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse">
                 <div class="position-sticky pt-3 sidebar-sticky">
                     <ul class="nav flex-column">
-                        <br>
                         <li class="nav-item">
                             <a class="nav-link active" aria-current="page" href="/">
                                 <span data-feather="home" class="align-text-bottom"></span>
                                 Home
                             </a>
                         </li>
-                        <br>
                         <li class="nav-item">
                             <a class="nav-link" href="reservasi">
                                 <span data-feather="file" class="align-text-bottom"></span>
                                 Reservasi
                             </a>
                         </li>
-                        <br>
                         <li class="nav-item">
                             <a class="nav-link" href="jadwal">
                                 <span data-feather="file" class="align-text-bottom"></span>
                                 Jadwal
                             </a>
                         </li>
-                        <br>
                         <li class="nav-item">
-                            <a class="nav-link" href="profil">
+                            <a class="nav-link" href="#">
                                 <span data-feather="shopping-cart" class="align-text-bottom"></span>
                                 Profil
                             </a>

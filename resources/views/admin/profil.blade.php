@@ -1,12 +1,13 @@
-@extends('layouts.master-member');
-@section('title', 'profil')
-@section('content')
+@extends('layouts.master-pj');
+@section('title', 'dashboard_admin')
+@section('admin')
+
 
 <div class="row">
     <div class="col-4"></div>
     <div class="col-4">
         <center>
-            <h2>Profil</h2>
+            <h1>Profil</h1>
         <form action="{{route('profil')}}" method="post">
             @csrf
             <div class="form-outline mb-2">
@@ -33,7 +34,7 @@
             <button type="submit" class="btn btn-primary btn-block mb-1">Simpan</button>
             </div>
         </center>
-    </div> 
+    </div>
     <div class="col-4"></div>
 </div>
 

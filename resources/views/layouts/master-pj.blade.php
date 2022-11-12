@@ -10,7 +10,7 @@
     <title>Dashboard Admin - Reservasi Gedung</title>
 
     <link rel="canonical" href="https://getbootstrap.com/docs/5.2/examples/dashboard/">
-
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
 
 
 
@@ -78,7 +78,7 @@
 
 <body>
 
-    <header class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0 shadow">
+    <header class="navbar navbar-blue sticky-top bg-red flex-md-nowrap p-0 shadow">
         <a class="navbar-brand col-md-3 col-lg-2 me-0 px-3 fs-6">Reservasi Gedung Abral</a>
         <button class="navbar-toggler position-absolute d-md-none collapsed" type="button" data-bs-toggle="collapse"
             data-bs-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="false"
@@ -106,100 +106,28 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">
+                            <a class="nav-link" href="jadwal_admin">
                                 <span data-feather="file" class="align-text-bottom"></span>
                                 Jadwal Reservasi
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">
+                            <a class="nav-link" href="status_pemesanan">
                                 <span data-feather="shopping-cart" class="align-text-bottom"></span>
                                 Status Pemesanan
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">
-                                <span data-feather="users" class="align-text-bottom"></span>
-                                Member
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">
+                            <a class="nav-link" href="profil">
                                 <span data-feather="bar-chart-2" class="align-text-bottom"></span>
                                 Profil
                             </a>
                         </li>
                     </ul>
             </nav>
-
-            <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
-                <div class="row mt-5">
-                <div class="col-md-4 col-sm-12 mb-3">
-                    <div class="card">
-
-                        <div class="card-body">
-                            <img src="{{ asset('assets/img/jadwal.png') }}" style="width:100px" class="card-img-top"
-                                alt="...">
-                            <div class="card-title">
-                            </div>
-                            Jadwal Reservasi
-                        </div>
-                        <div class="card-footer">
-                            <a href="#" class="card-link">Selengkapnya.</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4 col-sm-12 mb-3">
-                    <div class="card">
-
-                        <div class="card-body">
-                            <img src="{{ asset('assets/img/pemesanan.png') }}" style="width:100px" class="card-img-top"
-                                alt="...">
-                            <div class="card-title">
-                            </div>
-                            Status Pemesanan
-                        </div>
-                        <div class="card-footer">
-                            <a href="#" class="card-link">Selengkapnya.</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4 col-sm-12 mb-3">
-                    <div class="card">
-
-                        <div class="card-body">
-                            <img src="{{ asset('assets/img/memberr.png') }}" style="width:100px" class="card-img-top"
-                                alt="...">
-                            <div class="card-title">
-                            </div>
-                            Member
-                        </div>
-                        <div class="card-footer">
-                            <a href="#" class="card-link">Selengkapnya.</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4 col-sm-12 mb-3">
-                    <div class="card">
-
-                        <div class="card-body">
-                            <img src="{{ asset('assets/img/profil.png') }}" style="width:100px" class="card-img-top"
-                                alt="...">
-                            <div class="card-title">
-                            </div>
-                            Profil
-                        </div>
-                        <div class="card-footer">
-                            <a href="#" class="card-link">Selengkapnya.</a>
-                        </div>
-                    </div>
-                </div>
-                </div>
-            </main>
         </div>
     </div>
     @yield('admin')
-
     <script src="{{ asset('assets/dist/js/bootstrap.bundle.min.js')}}"></script>
 
     <script src="https://cdn.jsdelivr.net/npm/feather-icons@4.28.0/dist/feather.min.js"

@@ -4,8 +4,8 @@
 
 <div class="row">
     <div class="col-4"></div>
-    <div class="col-4">
-        <center>
+   <div class="col-4">
+        <ce nter>
             <h2>Register</h2>
         <form action="{{route('register-proses')}}" method="post">
             @csrf

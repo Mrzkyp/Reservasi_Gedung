@@ -6,6 +6,7 @@ use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\Dashboard_adminController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ReservasiController;
 
 
 /*
@@ -29,10 +30,13 @@ Route::get('/register', [AuthController::class,'register'])->name('register');
 Route::post('/register', [AuthController::class,'store'])->name('register-proses');
 
 Route::middleware(['auth'])->group(function(){
-    Route::get('/home',[DashboardController::class,'index'])->name('home');
+    Route::get('/dashboard',[DashboardController::class,'index'])->name('dashboard');
     Route::get('/logout', [AuthController::class,'destroy'])->name('logout');
     Route::get('/reservasi', [AuthController::class,'pesan'])->name('reservasi');
+    Route::post('/reservasi', [ReservasiController::class,'proses'])->name('reservasi-proses');
     Route::get('/jadwal', [AuthController::class,'jadwal1'])->name('jadwal');
+    Route::get('/jadwal_admin', [AuthController::class,'jadwal2'])->name('jadwal_admin');
+    Route::get('/status_pemesanan', [AuthController::class,'order'])->name('status_pemesanan_admin');
     Route::get('/profil', [AuthController::class,'profil'])->name('profil');
     Route::get('/dashboard-admin', [DashboardController::class,'indexa'])->name('dashboard_admin');
     Route::get('/logout', [DashboardController::class,'destroys'])->name('logout');

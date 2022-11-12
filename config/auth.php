@@ -83,7 +83,7 @@ return [
         ],
 
         // 'users' => [
-        //     'driver' => 'database',
+        //     'driver' => 'datzabase',
         //     'table' => 'users',
         // ],
     ],

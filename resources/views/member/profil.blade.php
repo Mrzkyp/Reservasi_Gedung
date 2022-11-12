@@ -1,14 +1,13 @@
 @extends('layouts.master-member');
-@section('title', 'reservasi')
+@section('title', 'profil')
 @section('content')
 
-
-<h1>Form Reservasi Gedung</h1>
 <div class="row">
     <div class="col-4"></div>
     <div class="col-4">
         <center>
-        <form action="{{route('register-proses')}}" method="post">
+            <h2>Profil</h2>
+        <form action="{{route('profil')}}" method="post">
             @csrf
             <div class="form-outline mb-2">
                 <label class="form-label" for="name">Nama</label>
@@ -23,23 +22,20 @@
                 <textarea name="alamat" class="form-control" id="alamat" placeholder="Masukan Alamat"></textarea>
             </div>
             <div class="form-outline mb-2">
-                <label class="form-label" for="hari/tanggal">Hari/Tanggal</label>
-                <input name="hari/tanggal" type="date" class="form-control" id="hari/tanggal" placeholder="Masukan hari/tanggal">
+                <label class="form-label" for="email">Email</label>
+                <input name="email" type="text" id="email" class="form-control" placeholder="Masukan Email">
             </div>
             <div class="form-outline mb-2">
-                <label class="form-label" for="waktu">Waktu</label>
-                <input name="waktu" type="time" class="form-control" id="waktu" placeholder="Masukan waktu">
-            </div>
-            <div class="form-outline mb-2">
-                <label class="form-label" for="keterangan">Keterangan</label>
-                <input name="keterangan" type="text" class="form-control" id="keterangan" placeholder="Masukan keterangan">
+                <label class="form-label" for="form2Example2">Password</label>
+                <input name="password" type="password" id="form2Example2" class="form-control" placeholder="password">
             </div>
 
-            <button type="submit" class="btn btn-primary btn-block mb-1">kirim</button>
+            <button type="submit" class="btn btn-primary btn-block mb-1">Simpan</button>
             </div>
         </center>
-    </div>
+    </div> 
     <div class="col-4"></div>
 </div>
+
 
 @endsection

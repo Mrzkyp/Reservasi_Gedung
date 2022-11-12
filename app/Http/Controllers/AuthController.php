@@ -15,7 +15,7 @@ class AuthController extends Controller
 {
     //login
     public function index(){
-        return view('login.login');
+        return view('login.login'); 
     }
 //login proses
     public function signin(Request $request)
@@ -24,7 +24,7 @@ class AuthController extends Controller
         // User::where("email",  $input->email)
         // dd(Auth::attempt(['email' => $input['email'],'password' => $input['password']]));
         if (Auth::attempt(['email' => $input['email'],'password' => $input['password']])) {
-            return redirect('/dashboard');
+            return redirect('/');
         }
         return redirect('/login');
     }
@@ -71,6 +71,11 @@ class AuthController extends Controller
     return view('login.login-admin');
 }
 
+// profil member
+public function profil()
+{
+    return view('member.profil');
+}
 
 // //login proses admin
 public function store1(Request $request)

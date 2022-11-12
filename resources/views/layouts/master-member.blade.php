@@ -91,7 +91,7 @@
                     <a class="btn btn-sm btn-outline-secondary" href="login">Log in</a>
                     <a class="btn btn-sm btn-outline-secondary" href="register">Register</a>
                     @endif
-
+                </nav>
             </div>
         </div>
     </header>
@@ -106,26 +106,30 @@
             <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse">
                 <div class="position-sticky pt-3 sidebar-sticky">
                     <ul class="nav flex-column">
+                        <br>
                         <li class="nav-item">
                             <a class="nav-link active" aria-current="page" href="/">
                                 <span data-feather="home" class="align-text-bottom"></span>
                                 Home
                             </a>
                         </li>
+                        <br>
                         <li class="nav-item">
                             <a class="nav-link" href="reservasi">
                                 <span data-feather="file" class="align-text-bottom"></span>
                                 Reservasi
                             </a>
                         </li>
+                        <br>
                         <li class="nav-item">
                             <a class="nav-link" href="jadwal">
                                 <span data-feather="file" class="align-text-bottom"></span>
                                 Jadwal
                             </a>
                         </li>
+                        <br>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">
+                            <a class="nav-link" href="profil">
                                 <span data-feather="shopping-cart" class="align-text-bottom"></span>
                                 Profil
                             </a>

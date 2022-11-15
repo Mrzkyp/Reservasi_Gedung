@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Member;
+use App\Models\reservasi;
 use App\Models\User;
 use Illuminate\Support\Str;
 
@@ -24,7 +25,7 @@ class AuthController extends Controller
         // User::where("email",  $input->email)
         // dd(Auth::attempt(['email' => $input['email'],'password' => $input['password']]));
         if (Auth::attempt(['email' => $input['email'],'password' => $input['password']])) {
-            return redirect('/dashboard');
+            return redirect('/');
         }
         return redirect('/login');
     }
@@ -54,17 +55,9 @@ class AuthController extends Controller
         request()->session()->regenerateToken();
         return redirect('/');
     }
-//Reservasi member
-    public function pesan()
-    {
-        return view('member.reservasi');
-    }
+
     
-//jadwal member
-    public function jadwal1()
-    {
-        return view('member.jadwalMember');
-    }
+
     
 // login admin
     public function index1()
@@ -85,22 +78,18 @@ public function store1(Request $request)
 }
 }
 
-//mengelola jadwal
-public function jadwal2()
-{
-    return view('admin.jadwal_reservasi');
-}
-
-//mengelola status pemesanan
-public function order()
-{
-    return view('admin.status_pemesanan');
-}
-
 //mengelola profil
 public function profil()
 {
     return view('admin.profil');
+}
+
+
+//mengelola status pemesanan
+public function order1()
+{
+    $reservasi = Reservasi::get();
+    return view('admin.status_pemesanan', $reservasi);
 }
 
 

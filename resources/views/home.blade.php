@@ -1,4 +1,4 @@
-@extends('layouts.master-member');
+@extends('layouts.master-member')
 @section('title', 'Home')
 @section('content')
 

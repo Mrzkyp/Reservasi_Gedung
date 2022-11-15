@@ -1,6 +1,6 @@
-@extends('layouts.master-pj')
-@section('title', 'dashboard_admin')
-@section('admin')
+@extends('layouts.master-member')
+@section('title', 'dashboard')
+@section('member')
 
 
 <div class="row">

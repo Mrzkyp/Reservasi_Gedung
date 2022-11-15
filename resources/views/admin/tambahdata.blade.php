@@ -1,34 +1,26 @@
 @extends('layouts.master-member')
-@section('title', 'reservasi')
+@section('title', 'tambahdata')
 @section('content')
 
 
-<h1>Form Reservasi Gedung</h1>
+<h1>Form Jadwal Gedung</h1>
 <div class="row">
     <div class="col-4"></div>
     <div class="col-4">
         <center>
-        <form action="{{route('reservasi-proses')}}" method="post">
+        <form action="{{asset('tambah-proses')}}" method="post">
             @csrf
             <div class="form-outline mb-2">
-                <label class="form-label" for="name">Nama</label>
-                <input name="name" type="text" id="name" class="form-control" placeholder="Masukan Nama">
-            </div>
-            <div class="form-outline mb-2">
-                <label class="form-label" for="notelepon">No Telepon</label>
-                <input name="notelepon" type="number" id="notelepon" class="form-control" placeholder="No telepon">
-            </div>
-            <div class="form-outline mb-2">
-                <label class="form-label" for="alamat">Alamat</label>
-                <textarea name="alamat" class="form-control" id="alamat" placeholder="Masukan Alamat"></textarea>
-            </div>
-            <div class="form-outline mb-2">
-                <label class="form-label" for="hari/tanggal">Hari/Tanggal</label>
+                <label class="form-label" for="hari_tanggal">Hari/Tanggal</label>
                 <input name="hari_tanggal" type="date" class="form-control" id="hari_tanggal" placeholder="Masukan hari/tanggal">
             </div>
             <div class="form-outline mb-2">
                 <label class="form-label" for="waktu">Waktu</label>
                 <input name="waktu" type="time" class="form-control" id="waktu" placeholder="Masukan waktu">
+            </div>
+            <div class="form-outline mb-2">
+                <label class="form-label" for="pengguna">Pengguna</label>
+                <textarea name="pengguna" class="form-control" id="pengguna" placeholder="Masukan Pengguna"></textarea>
             </div>
             <div class="form-outline mb-2">
                 <label class="form-label" for="keterangan">Keterangan</label>

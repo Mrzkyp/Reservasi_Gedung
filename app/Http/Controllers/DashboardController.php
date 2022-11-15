@@ -13,7 +13,7 @@ class DashboardController extends Controller
 {
     public function index()
     {
-        return view('member.dashboard');
+        return view('home');
     }
 
     public function indexa()
@@ -28,5 +28,7 @@ class DashboardController extends Controller
         request()->session()->regenerateToken();
         return redirect('/');
     }
+
+    
 
 }

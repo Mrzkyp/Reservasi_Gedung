@@ -11,16 +11,16 @@
         <form action="{{asset('tambah-proses')}}" method="post">
             @csrf
             <div class="form-outline mb-2">
+                <label class="form-label" for="name">Nama</label>
+                <textarea name="name" class="form-control" id="name" placeholder="Masukan Nama"></textarea>
+            </div>
+            <div class="form-outline mb-2">
                 <label class="form-label" for="hari_tanggal">Hari/Tanggal</label>
                 <input name="hari_tanggal" type="date" class="form-control" id="hari_tanggal" placeholder="Masukan hari/tanggal">
             </div>
             <div class="form-outline mb-2">
                 <label class="form-label" for="waktu">Waktu</label>
                 <input name="waktu" type="time" class="form-control" id="waktu" placeholder="Masukan waktu">
-            </div>
-            <div class="form-outline mb-2">
-                <label class="form-label" for="pengguna">Pengguna</label>
-                <textarea name="pengguna" class="form-control" id="pengguna" placeholder="Masukan Pengguna"></textarea>
             </div>
             <div class="form-outline mb-2">
                 <label class="form-label" for="keterangan">Keterangan</label>

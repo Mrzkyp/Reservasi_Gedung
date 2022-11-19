@@ -43,7 +43,10 @@ Route::middleware(['auth'])->group(function(){
     Route::get('/tambah_data', [JadwalController::class,'pesan1'])->name('jadwal_admin');
     Route::post('/tambah-proses', [JadwalController::class,'proses1'])->name('tambah-proses');
     Route::get('/jadwal_admin', [JadwalController::class,'muncul'])->name('jadwal_admin');
-    
+    Route::get('/hapusdata', [JadwalController::class,'destroy'])->name('hapusdata');
+    Route::put('/admin/jadwal/{id}', [JadwalController::class, "update"])->name('updatedata');
+    Route::post('/update_admin', [JadwalController::class,""]);
+
     Route::get('/status_pemesanan', [ReservasiController::class,'muncul'])->name('status_pemesanan_admin');
     Route::get('/profil', [AuthController::class,'profil'])->name('profil');
     

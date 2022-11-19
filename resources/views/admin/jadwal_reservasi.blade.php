@@ -12,25 +12,28 @@
             <table class="table">
                 <thead>
                     <tr>
+                        <td scope="col">No</td>
+                        <th scope="col">Nama</th>
                         <th scope="col">Hari/tanggal</th>
                         <th scope="col">Waktu</th>
-                        <th scope="col">pengguna</th>
                         <th scope="col">keterangan</th>
-                        <th scope="col">aksi</th>
+                        <th scope="col">Aksi</th>
                     </tr>
                 </thead>
                 <tbody>
                     @foreach($jadwal as $s) 
           <tr>
+            <td>{{$s->id}}</td>
+            <td>{{$s->name}}</td>
             <td>{{$s->hari_tanggal}}</td>
             <td>{{$s->waktu}}</td>
-            <td>{{$s->pengguna}}</td>
             <td>{{$s->keterangan}}</td>
             <td>  
-            <a href="{{$s->name}}" class="btn btn-info"><span
+            <a href="{{$s->id}}" class="btn btn-info"><span
                 class="material-symbols-outlined">edit</span></a>
-              <a href="{{$s->name}}" onclick="return confirm('Apakah Anda Yakin Menghapus Data?');" class="btn btn-danger"><span
-                                    class="material-symbols-outlined">delete</span></a>
+
+              <a href="/jadwal_admin/{{ $s->id }}" onclick="return confirm('Apakah Anda Yakin Menghapus Data?');" class="btn btn-danger"><span
+                class="material-symbols-outlined">delete</span></a>
             </td>
           </tr>
           @endforeach

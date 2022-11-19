@@ -15,9 +15,9 @@ return new class extends Migration
     {
         Schema::create('jadwal', function (Blueprint $table) {
             $table->id();
+            $table->string('name');
             $table->string('hari_tanggal');
             $table->string('waktu');
-            $table->string('pengguna');
             $table->string('keterangan');
             $table->timestamps();
         });

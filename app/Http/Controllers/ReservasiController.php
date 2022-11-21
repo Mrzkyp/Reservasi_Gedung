@@ -30,7 +30,30 @@ class ReservasiController extends Controller
         'waktu' => $request->waktu,
         'keterangan' => $request->keterangan,
         ]);
-        return redirect('/jadwal');
+        return redirect('/status_pemesanan');
+    }
+
+    public function tampilkandata1($id)
+{
+    $reservasi = Reservasi::find($id);
+    
+    return view ('admin.status_pemesanan', compact('reservasi'));
+}
+
+
+    public function updatedata(Request $request, $id)
+{
+    $reservasi = Reservasi::find($id);
+    $reservasi->update($request->all()); 
+    
+    return redirect()->route("admin.status_pemesanan")->with('success',' Data telah diperbaharui!');
+}
+
+    public function delete1($id){
+        $data = Reservasi::find($id);
+        $data->delete();
+
+        return redirect()->route("admin.status_pemesanan")->with("success", "Data berhasil di hapus");
     }
 
 

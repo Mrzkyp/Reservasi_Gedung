@@ -12,10 +12,10 @@ class JadwalController extends Controller
     {
 
         return view('admin.tambahdata');
-    }  
-    
+    }
+
     public function muncul(Request $request)
-    { 
+    {
         $jadwal = Jadwal::latest()->paginate(5);
         return view('admin.jadwal_reservasi', compact('jadwal'));
     }
@@ -34,23 +34,27 @@ class JadwalController extends Controller
     public function pesan1(){
         return view('admin.tambahdata');
     }
+
+    public function tampilkandata($id)
+{
+    $jadwal = Jadwal::find($id);
+    // dd($jadwal);
+    return view ('admin.tampildata', compact('jadwal'));
+}
+
+public function updatedata(Request $request, $id)
+{
+    $jadwal = Jadwal::find($id);
+    $jadwal->update($request->all()); 
     
-    public function update(Request $request, $id){
-        Jadwal::where("id", $id)->update([
-        'name' => $request->name,
-        'hari_tanggal' => $request->hari_tanggal,
-        'waktu' => $request->waktu,
-        'keterangan' => $request->keterangan,
-        ]);
-        return back();
+    return redirect()->route("jadwal_admin")->with('success',' Data telah diperbaharui!');
+}
+
+    public function delete($id){
+        $data = jadwal::find($id);
+        $data->delete();
+
+        return redirect()->route("jadwal_admin")->with("success", "Data berhasil di hapus");
     }
 
-    public function destroy($id)
-{
-    $Jadwal = Jadwal::where('id', $id)->first();
-    $Jadwal->delete();
-    Jadwal::where('id', $id)->delete();
-    return back();
-}
-    
 }

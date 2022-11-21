@@ -40,19 +40,24 @@ Route::middleware(['auth'])->group(function(){
     Route::get('/reservasi', [ReservasiController::class,'pesan'])->name('reservasi');
     Route::post('/reservasi', [ReservasiController::class,'proses1'])->name('reservasi-proses');
 
+    Route::get('/tampilkandata1/{id}', [ReservasiController::class, 'tampilkandata1'])->name('tampildata1');
+    Route::get('/delete1/{id}', [ReservasiController::class, 'delete1'])->name('delete');
+    Route::post('/updatedata/{id}', [ReservasiController::class, 'updatedata1'])->name('updatedata1');
+
     Route::get('/tambah_data', [JadwalController::class,'pesan1'])->name('jadwal_admin');
     Route::post('/tambah-proses', [JadwalController::class,'proses1'])->name('tambah-proses');
     Route::get('/jadwal_admin', [JadwalController::class,'muncul'])->name('jadwal_admin');
-    Route::get('/hapusdata', [JadwalController::class,'destroy'])->name('hapusdata');
-    Route::put('/admin/jadwal/{id}', [JadwalController::class, "update"])->name('updatedata');
-    Route::post('/update_admin', [JadwalController::class,""]);
+
+    Route::get('/tampilkandata/{id}', [JadwalController::class, 'tampilkandata'])->name('tampildata');
+    Route::get('/delete/{id}', [JadwalController::class, 'delete'])->name('delete');
+    Route::post('/updatedata/{id}', [JadwalController::class, 'updatedata'])->name('updatedata');
 
     Route::get('/status_pemesanan', [ReservasiController::class,'muncul'])->name('status_pemesanan_admin');
     Route::get('/profil', [AuthController::class,'profil'])->name('profil');
-    
+
     Route::get('/dashboard-admin', [DashboardController::class,'indexa'])->name('dashboard_admin');
     Route::get('/profil_member', [AuthController::class,'profil'])->name('profil');
 
     Route::get('/logout', [DashboardController::class,'destroys'])->name('logout');
-    
+
 });

@@ -3,7 +3,7 @@
 @section('content')
 
 
-<h1>Form Jadwal Gedung</h1>
+<center><h1>Form Jadwal Gedung</h1></center>
 <div class="row">
     <div class="col-4"></div>
     <div class="col-4">
@@ -12,7 +12,7 @@
             @csrf
             <div class="form-outline mb-2">
                 <label class="form-label" for="name">Nama</label>
-                <textarea name="name" class="form-control" id="name" placeholder="Masukan Nama"></textarea>
+                <input name="name" class="form-control" id="name" placeholder="Masukan Nama">
             </div>
             <div class="form-outline mb-2">
                 <label class="form-label" for="hari_tanggal">Hari/Tanggal</label>

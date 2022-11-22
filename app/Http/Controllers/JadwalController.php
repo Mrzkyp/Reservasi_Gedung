@@ -4,20 +4,21 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Jadwal;
-use App\Models\Nama;
+use App\Models\Reservasi;
 
 class JadwalController extends Controller
 {
     public function proses()
     {
 
-        return view('admin.tambahdata');
+        $reservasi = Reservasi::get();
+        return view('admin.jadwal_reservasi', $reservasi);
     }
 
     public function muncul(Request $request)
     {
-        $jadwal = Jadwal::latest()->paginate(5);
-        return view('admin.jadwal_reservasi', compact('jadwal'));
+        $reservasi = Reservasi::latest()->paginate(5);
+        return view('admin.jadwal_reservasi', compact('reservasi'));
     }
 
     public function proses1(Request $request)

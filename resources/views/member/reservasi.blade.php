@@ -3,7 +3,7 @@
 @section('content')
 
 
-<h1>Form Reservasi Gedung</h1>
+<center><h1>Form Reservasi Gedung</h1></center>
 <div class="row">
     <div class="col-4"></div>
     <div class="col-4">
@@ -34,7 +34,6 @@
                 <label class="form-label" for="keterangan">Keterangan</label>
                 <input name="keterangan" type="text" class="form-control" id="keterangan" placeholder="Masukan keterangan">
             </div>
-
             <button type="submit" class="btn btn-primary btn-block mb-1">kirim</button>
             </div>
         </center>

@@ -21,7 +21,6 @@
                             <th scope="col">Waktu</th>
                             <th scope="col">Keterangan</th>
                             <th scope="col">Status Pemesanan</th>
-                            <th scope="col">Status </th>
                             <th scope="col">aksi</th>
                         </tr>
                     </thead>
@@ -31,18 +30,23 @@
                             @endphp
                         @foreach ($reservasi as $row)
                             <tr>
-                                <td>{{ $row->id }}</td>
+                                <th scope="row">{{ $no++ }}</th>
                                 <td>{{ $row->name }}</td>
                                 <td>{{ $row->notelepon }}</td>
                                 <td>{{ $row->alamat }}</td>
                                 <td>{{ $row->hari_tanggal }}</td>
                                 <td>{{ $row->waktu }}</td>
                                 <td>{{ $row->keterangan }}</td>
-                                <td>{{ $row->created_at->diffForHumans() }}</td>
-                                <td></td>
                                 <td>
-                                    <a href="/tampilkandata1/{{$row->id}}" class="btn btn-info">Edit</a>
-                                        <a href="/delete1/{{ $row->id }}" class="btn btn-danger delete" reservasi-id="{{ $row->id }}" reservasi-name="{{ $row->name }}">Delete</a>
+                                    @if ($row->status == 0)
+                                        <span>Belum Aktif</span>
+                                    @else
+                                        <span>Sudah Aktif</span>
+                                    @endif
+                                </td>
+                                <td>
+                                    <a href="{{ route('accreservasi', $row->id) }}" class="btn btn-info">ubah status</a>
+                                    <a href="/delete/{{ $row->id }}" onclick="return confirm('Apakah Ingin menghapus data ini?')" class="btn btn-danger delete" reservasi-id="{{ $row->id }}" reservasi-name="{{ $row->name }}">Delete</a>
                                 </td>
                             </tr>
                         @endforeach

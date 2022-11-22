@@ -5,7 +5,7 @@
                 <div class="row mt-5">
                 <div class="col-md-4 col-sm-12 mb-3">
                     <div class="card">
-
+                        
                         <div class="card-body">
                             <img src="{{ asset('assets/img/jadwal.png') }}" style="width:100px" class="card-img-top"
                                 alt="...">

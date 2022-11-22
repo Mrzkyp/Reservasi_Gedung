@@ -150,6 +150,7 @@
         </div>
 
         <script src="{{ asset('assets/disc/js/bootstrap.bundle.min.js') }}"></script>
+        <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 </body>
 
 </html>

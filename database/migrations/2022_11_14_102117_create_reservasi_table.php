@@ -21,6 +21,7 @@ return new class extends Migration
             $table->string('hari_tanggal');
             $table->string('waktu');
             $table->string('keterangan');
+            $table->string('status');
             $table->timestamps();
         });
     }

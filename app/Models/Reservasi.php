@@ -7,16 +7,19 @@ use Illuminate\Database\Eloquent\Model;
 
 class Reservasi extends Model
 {
-    use HasFactory;
+    // use HasFactory;
     
     protected $table = 'reservasi';
     protected $primaryKey = 'id';
-    protected $fillable =[
-        'name',
-        'notelepon',
-        'alamat',
-        'hari_tanggal',
-        'waktu',
-        'keterangan',
-    ];
+    // protected $fillable =[
+    //     'name',
+    //     'notelepon',
+    //     'alamat',
+    //     'hari_tanggal',
+    //     'waktu',
+    //     'keterangan',
+    //     'status',
+    // ];
+    protected $guarded = [];
+    use HasFactory;
 }

@@ -3,21 +3,21 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Jadwal;
+use App\Models\Reservasi;
 use App\Models\JadwalMember;
 
 class JadwalMemberController extends Controller
 {
     public function proses()
     {
-        $jadwal = Jadwal::get();
-        return view('member.jadwalmember', $jadwal);
+        $reservasi = Reservasi::get();
+        return view('member.jadwalmember', $reservasi);
     }  
     
     public function muncul(Request $request)
     { 
-        $jadwal = Jadwal::latest()->paginate(5);
-        return view('member.jadwalmember', compact('jadwal'));
+        $reservasi = Reservasi::latest()->paginate(5);
+        return view('member.jadwalmember', compact('reservasi'));
     }
 
 }

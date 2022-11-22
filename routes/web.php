@@ -40,9 +40,9 @@ Route::middleware(['auth'])->group(function(){
     Route::get('/reservasi', [ReservasiController::class,'pesan'])->name('reservasi');
     Route::post('/reservasi', [ReservasiController::class,'proses1'])->name('reservasi-proses');
 
-    Route::get('/tampilkandata1/{id}', [ReservasiController::class, 'tampilkandata1'])->name('tampildata1');
+    Route::get('/tampilkandata1/{id}', [ReservasiController::class, 'tampilkandata1'])->name('tampildata');
     Route::get('/delete1/{id}', [ReservasiController::class, 'delete1'])->name('delete');
-    Route::post('/updatedata/{id}', [ReservasiController::class, 'updatedata1'])->name('updatedata1');
+    Route::get('/accreservasi/{id}', [ReservasiController::class, 'accreservasi'])->name('accreservasi');
 
     Route::get('/tambah_data', [JadwalController::class,'pesan1'])->name('jadwal_admin');
     Route::post('/tambah-proses', [JadwalController::class,'proses1'])->name('tambah-proses');

@@ -54,9 +54,9 @@ class AuthController extends Controller
         return redirect('/');
     }
 
-    
 
-    
+
+
 // login admin
     public function index1()
 {

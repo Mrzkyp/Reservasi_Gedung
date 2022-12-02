@@ -1,55 +1,3 @@
-{{-- @extends('layouts.master-pj')
-@section('title', 'jadwal_reservasi')
-@section('admin')
-
-    <div class="row">
-        <div class="row">
-            <center>
-                <h1>Jadwal Reservasi</h1>
-            </center>
-            <form action="{{ route('jadwal_admin') }}" method="post">
-<main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
-    <table class="table">
-        <thead>
-            <tr>
-                <th scope="col">No</th>
-                <th scope="col">Nama</th>
-                <th scope="col">Hari_Tanggal</th>
-                <th scope="col">Waktu</th>
-                <th scope="col">Keterangan</th>
-                <th scope="col">Status</th>
-                <th scope="col">Aksi</th>
-            </tr>
-        </thead>
-        <tbody>
-            @php
-            $no = 1;
-            @endphp
-            @foreach ($reservasi as $row)
-            <tr>
-                <th scope="row">{{ $no++ }}</th>
-                <td>{{ $row->name }}</td>
-                <td>{{ $row->hari_tanggal }}</td>
-                <td>{{ $row->waktu }}</td>
-                <td>{{ $row->keterangan }}</td>
-                <td>
-                    @if ($row->status == 0)
-                    <span>Belum Lunas</span>
-                    @else
-                    <span>Lunas</span>
-                    @endif
-                </td>
-                <td>
-                    <a href="{{ route('accreservasi', $row->id) }}" class="btn btn-info">ubah status</a>
-                </td>
-            </tr>
-            @endforeach
-        </tbody>
-    </table>
-    {{ $reservasi->links() }}
-</main>
-@endsection --}}
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -88,7 +36,7 @@
               * Template URL: https://bootstrapmade.com/nice-admin-bootstrap-admin-html-template/
               * Author: BootstrapMade.com
               * License: https://bootstrapmade.com/license/
-              ======================================================== -->
+            ======================================================== -->
 </head>
 
 <body>
@@ -141,6 +89,12 @@
                     <i class="bi bi-person"></i>
                     <span>Jadwal Reservasi</span>
                 </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="status_pemesanan">
+                    <i class="bi bi-person"></i>
+                    <span>Status Pemesanan</span>
+                </a>
             </li><!-- End Profile Page Nav -->
     </aside><!-- End Sidebar-->
 
@@ -177,31 +131,32 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                  @php
-                                  $no = 1;
-                                  @endphp
-                                  @foreach ($reservasi as $row)
-                                  <tr>
-                                      <th scope="row">{{ $no++ }}</th>
-                                      <td>{{ $row->name }}</td>
-                                      <td>{{ $row->hari_tanggal }}</td>
-                                      <td>{{ $row->waktu_mulai }}</td>
-                                      <td>{{ $row->waktu_berakhir }}</td>
-                                      <td>{{ $row->keterangan }}</td>
-                                      <td>
-                                          @if ($row->status == 0)
-                                          <span>Belum Lunas</span>
-                                          @else
-                                          <span>Lunas</span>
-                                          @endif
-                                      </td>
-                                      <td>
-                                          <a href="{{ route('accreservasi', $row->id) }}" class="btn btn-info">ubah status</a>
-                                          <a href="#" class="text-primary">Sunt similique distinctio</a>
-                                      </td>
-                                  </tr>
-                                  @endforeach
-                              </tbody>
+                                    @php
+                                        $no = 1;
+                                    @endphp
+                                    @foreach ($reservasi as $row)
+                                        <tr>
+                                            <th scope="row">{{ $no++ }}</th>
+                                            <td>{{ $row->name }}</td>
+                                            <td>{{ $row->hari_tanggal }}</td>
+                                            <td>{{ $row->waktu_mulai }}</td>
+                                            <td>{{ $row->waktu_berakhir }}</td>
+                                            <td>{{ $row->keterangan }}</td>
+                                            <td>
+                                                @if ($row->status == 0)
+                                                    <span class="badge bg-warning">Belum Lunas</span>
+                                                @else
+                                                    <span class="badge bg-warning">Lunas</span>
+                                                @endif
+                                            </td>
+                                            <td>
+                                                <a href="{{ route('accreservasi', $row->id) }}" <button type="button"
+                                                    class="btn btn-warning"><i
+                                                        class="bi bi-exclamation-triangle"></i></button>
+                                            </td>
+                                        </tr>
+                                    @endforeach
+                                </tbody>
                             </table>
 
                         </div>

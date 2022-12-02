@@ -87,7 +87,7 @@
             data-bs-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="false"
             aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
-        </button> 
+        </button>
         <div clas=-098 763  3 ="navbar-nav">
             <div class="nav-item text-nowrap">
                 {{ auth()->user()->name }}&nbsp;
@@ -230,6 +230,12 @@
                 <a class="nav-link collapsed" href="jadwal_reservasi">
                 <i class="bi bi-person"></i>
                 <span>Jadwal Reservasi</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="status_pemesanan">
+                <i class="bi bi-person"></i>
+                <span>Status Pemesanan</span>
                 </a>
             </li><!-- End Profile Page Nav -->
     </aside><!-- End Sidebar-->

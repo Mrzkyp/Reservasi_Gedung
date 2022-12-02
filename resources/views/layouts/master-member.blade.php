@@ -9,7 +9,7 @@
     <meta name="generator" content="Hugo 0.104.2">
     <title>{{ config('app.name') }}</title>
 
-    <!--<link rel="canonical" href="https://getbootstrap.com/docs/5.2/examples/blog/">-->
+    <link rel="canonical" href="https://getbootstrap.com/docs/5.2/examples/blog/">
 
     <link href="{{ asset('assets/dist/css/bootstrap.min.css') }}" rel="stylesheet">
 
@@ -75,7 +75,9 @@
 <body>
     <header class="navbar navbar-blue sticky-top bg-green flex-md-nowrap p-0 shadow">
         <a class="navbar-brand col-md-3 col-lg-2 me-0 px-3 fs-6">Reservasi Gedung Abral</a>
-        <button class="navbar-toggler position-absolute d-md-none collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="false" aria-label="Toggle navigation">
+        <button class="navbar-toggler position-absolute d-md-none collapsed" type="button" data-bs-toggle="collapse"
+            data-bs-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="false"
+            aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
 
@@ -83,74 +85,33 @@
             <div class="nav-scroller py-1 mb-2">
                 <nav class="nav d-flex justify-content-between">
                     @if (Str::length(auth()->user()) > 0)
-                    {{ auth()->user()->name }}&nbsp;
-                    <a class="btn btn-sm btn-outline-secondary" href="{{asset('logout')}}">Sign out</a>
+                        {{ auth()->user()->name }}&nbsp;
+                        <a class="btn btn-sm btn-outline-secondary" href="{{ asset('logout') }}">Sign out</a>
                     @else
-                    <a class="btn btn-sm btn-outline-secondary" href="login-admin">Log in admin</a>
-                    <a class="btn btn-sm btn-outline-secondary" href="login">Log in</a>
-                    <a class="btn btn-sm btn-outline-secondary" href="register">Register</a>
+                        <a class="btn btn-sm btn-outline-secondary" href="login-admin">Log in admin</a>
+                        <a class="btn btn-sm btn-outline-secondary" href="login">Log in</a>
+                        <a class="btn btn-sm btn-outline-secondary" href="register">Register</a>
                     @endif
 
             </div>
         </div>
     </header>
-
-
-    </header>
-    </nav>
-    </div>
-    </div>
-    <div class="container-fluid">
-        <div class="row">
-            <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse">
-                <div class="position-sticky pt-3 sidebar-sticky">
-                    <ul class="nav flex-column">
-                        <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="/">
-                                <span data-feather="home" class="align-text-bottom"></span>
-                                Home
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="reservasi">
-                                <span data-feather="file" class="align-text-bottom"></span>
-                                Reservasi
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="jadwal">
-                                <span data-feather="file" class="align-text-bottom"></span>
-                                Jadwal
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="profil_member">
-                                <span data-feather="shopping-cart" class="align-text-bottom"></span>
-                                Profil
-                            </a>
-                        </li>
-            </nav>
-
-            <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
-                <div class="nav-scroller">
-                </div>
-
-                <main class="container">
-                    <div class="col-md-6 bg">
-                    </div>
-                    @yield('content')
-                </main>
-                <footer class="blog-footer">
-                    <br>
-                    <center>Jl. Lohbener Lor, Lohbener, Indramayu, Jawa Barat 45252</center>
-                    <br>
-                </footer>
-                <canvas class="my-4 w-100" id="myChart" width="900" height="380"></canvas>
-
+    <main class="container">
+        <div class="col-md-6 bg">
         </div>
+        @yield('content')
+    </main>
+    <footer class="blog-footer">
+        <br>
+        <center>Jl. Lohbener Lor, Lohbener, Indramayu, Jawa Barat 45252</center>
+        <br>
+    </footer>
+    <canvas class="my-4 w-100" id="myChart" width="900" height="380"></canvas>
 
-        <script src="{{ asset('assets/disc/js/bootstrap.bundle.min.js') }}"></script>
-        <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    </div>
+
+    <script src="{{ asset('assets/disc/js/bootstrap.bundle.min.js') }}"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 </body>
 
 </html>

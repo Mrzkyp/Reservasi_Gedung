@@ -4,8 +4,6 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Member;
-use App\Models\reservasi;
-use App\Models\User;
 use Illuminate\Support\Str;
 
 
@@ -76,20 +74,6 @@ public function store1(Request $request)
         } else{
         return redirect('/login-admin');
 }
-}
-
-//mengelola profil
-public function profil()
-{
-    return view('admin.profil');
-}
-
-
-//mengelola status pemesanan
-public function order1()
-{
-    $reservasi = Reservasi::get();
-    return view('admin.status_pemesanan', $reservasi);
 }
 
 

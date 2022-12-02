@@ -15,7 +15,7 @@ class JadwalController extends Controller
         return view('admin.jadwal_reservasi', $reservasi);
     }
 
-    public function muncul(Request $request)
+    public function show(Request $request)
     {
         $reservasi = Reservasi::latest()->paginate(5);
         return view('admin.jadwal_reservasi', compact('reservasi'));
@@ -29,11 +29,7 @@ class JadwalController extends Controller
         'waktu' => $request->waktu,
         'keterangan' => $request->keterangan,
         ]);
-        return redirect('/jadwal_admin');
-    }
-
-    public function pesan1(){
-        return view('admin.tambahdata');
+        return redirect('/jadwal_reservasi');
     }
 
     public function tampilkandata($id)
@@ -43,19 +39,11 @@ class JadwalController extends Controller
     return view ('admin.tampildata', compact('jadwal'));
 }
 
-public function updatedata(Request $request, $id)
-{
-    $jadwal = Jadwal::find($id);
-    $jadwal->update($request->all()); 
-    
-    return redirect()->route("jadwal_admin")->with('success',' Data telah diperbaharui!');
-}
-
     public function delete($id){
-        $data = jadwal::find($id);
+        $data = Reservasi::find($id);
         $data->delete();
 
-        return redirect()->route("jadwal_admin")->with("success", "Data berhasil di hapus");
+        return redirect()->route("status_pemesanan_admin")->with("success", "Data berhasil di hapus");
     }
 
 }

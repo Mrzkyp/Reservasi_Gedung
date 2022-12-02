@@ -33,21 +33,6 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-md-4 col-sm-12 mb-3">
-                    <div class="card">
-
-                        <div class="card-body">
-                            <img src="{{ asset('assets/img/profil.png') }}" style="width:100px" class="card-img-top"
-                                alt="...">
-                            <div class="card-title">
-                            </div>
-                            Profil
-                        </div>
-                        <div class="card-footer">
-                            <a href="profil" class="card-link">Selengkapnya.</a>
-                        </div>
-                    </div>
-                </div>
                 </div>
             </main>
     <br>

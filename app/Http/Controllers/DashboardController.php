@@ -5,21 +5,23 @@ namespace App\Http\Controllers;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Str;
 use Illuminate\Http\Request;
-use Illuminate\Http\Controllers\HomeController;
-use Illuminate\Http\Controllers\LoginMemberController;
+use App\Models\Reservasi;
+
 
 
 class DashboardController extends Controller
 {
-    public function index()
-    {
-        return view('home');
-    }
-
-    public function indexa()
-    {
+    public function index(){
         return view('admin.dashboard_admin');
     }
+
+
+    public function show(Request $request)
+    {
+        $reservasi = Reservasi::latest()->paginate(5);
+        return view('home', compact('reservasi'));
+    }
+    
 
     public function destroys()
     {

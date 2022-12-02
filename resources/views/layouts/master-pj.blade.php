@@ -228,10 +228,10 @@
 
             <li class="nav-item">
                 <a class="nav-link collapsed" href="jadwal_reservasi">
-                  <i class="bi bi-person"></i>
-                  <span>Jadwal Reservasi</span>
+                <i class="bi bi-person"></i>
+                <span>Jadwal Reservasi</span>
                 </a>
-              </li><!-- End Profile Page Nav -->
+            </li><!-- End Profile Page Nav -->
     </aside><!-- End Sidebar-->
 
     <main id="main" class="main">

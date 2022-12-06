@@ -117,7 +117,7 @@
                     <div class="card recent-sales overflow-auto">
                         <div class="card-body">
                             <h5 class="card-title">Jadwal Reservasi</h5>
-                            <table class="table table-borderless datatable">
+                            <table class="table table-borderless">
                                 <thead>
                                     <tr>
                                         <th scope="col">No</th>

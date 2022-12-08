@@ -49,6 +49,7 @@
                     <div class="row justify-content-center">
                         <div class="col-lg-4 col-md-6 d-flex flex-column align-items-center justify-content-center">
                             <form action="{{ route('reservasi-proses') }}" method="post">
+                                @csrf
                                 <div class="d-flex justify-content-center py-4">
                                     <a href="dashboard-admin" class="logo d-flex align-items-center w-auto">
                                         <img src="assets/img/logo.png" alt="">
@@ -81,7 +82,7 @@
                                             <div class="col-md-12 position-relative">
                                                 <label for="validationTooltipalamat" class="form-label">Alamat</label>
                                                 <div class="input-group has-validation">
-                                                    <input type="text" class="form-control"
+                                                <input name="alamat" type="text" class="form-control"
                                                         id="validationTooltipalamat"
                                                         aria-describedby="validationTooltipalamatPrepend" required>
                                                     <div class="invalid-tooltip">
@@ -118,7 +119,7 @@
                                                 <label for="validationTooltiketerangan"
                                                     class="form-label">Keterangan</label>
                                                 <div class="input-group has-validation">
-                                                    <input namee="keterangan" type="text" class="form-control"
+                                                    <input name="keterangan" type="text" class="form-control"
                                                         id="validationTooltipketerangan"
                                                         aria-describedby="validationTooltiketeranganPrepend" required>
                                                     <div class="invalid-tooltip">

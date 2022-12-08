@@ -52,10 +52,15 @@
 
                 <nav id="navbar" class="navbar">
                     <ul>
+                        @if (Str::length(auth()->user()) > 0)
+                        {{ auth()->user()->name }}&nbsp;
+                        <li><a class="getstarted scrollto" href="{{asset('logout')}}">Log out</a></li>
+                    @else
                         <li><a class="nav-link scrollto active" href="#hero">Home</a></li>
                         <li><a class="nav-link scrollto" href="#jadwal">Jadwal Reservasi</a></li>
-                        <li><a class="nav-link scrollto" href="#reservasi">Reservasi Gedung</a></li>
+                        <li><a class="nav-link scrollto" href="#cta">Reservasi Gedung</a></li>
                         <li><a class="getstarted scrollto" href="/login-admin">Login</a></li>
+                    @endif
                     </ul>
                     <i class="bi bi-list mobile-nav-toggle"></i>
                 </nav><!-- .navbar -->
@@ -217,7 +222,7 @@
                     <div class="col-lg-4" data-aos="fade-right">
                         <div class="section-title">
                             <h2>Deskripsi</h2>
-                            <p>Aplikasi Reservasi Gedung Abral adalah aplikasi yang menangani tentang pemesanan gedung. 
+                            <p>Aplikasi Reservasi Gedung Abral adalah aplikasi yang menangani tentang pemesanan gedung.
                                 Aplikasi ini menyediakan beberapa fitur seperti pendaftaran pengunjung, melihat data gedung dan memesan gedung.
                                 Aplikasi ini hadir untuk membantu konsumen/pembeli untuk memesan/reservasi gedung tanpa harus datang secara langsung dan mengetahui datanya serta harga gedung secara update. Pada sistem ini, kami membuat aplikasi untuk Gedung Abral yang pada proses reservasinya masih menggunakan sistem manual.
                                 </p>

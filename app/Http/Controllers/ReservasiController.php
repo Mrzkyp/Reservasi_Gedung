@@ -70,7 +70,7 @@ class ReservasiController extends Controller
                 ]); 
             }
         }
-        return redirect('/home');
+        return redirect('/');
     }
 
     public function tampilkandata1($id)

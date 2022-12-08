@@ -1,12 +1,8 @@
 <?php
 
 use App\Http\Controllers\AuthController;
-use App\Http\Controllers\LoginAdminController;
 use App\Http\Controllers\DashboardController;
-use App\Http\Controllers\HomeController;
-use App\Http\Controllers\Dashboard_adminController;
 Use App\Http\Controllers\JadwalController;
-use App\Http\Controllers\JadwalMemberController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ReservasiController;
 

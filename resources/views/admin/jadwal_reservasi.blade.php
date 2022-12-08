@@ -95,6 +95,12 @@
                     <i class="bi bi-person"></i>
                     <span>Status Pemesanan</span>
                 </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="#">
+                    <i class="bi bi-person"></i>
+                    <span>Status Transaksi</span>
+                </a>
             </li><!-- End Profile Page Nav -->
     </aside><!-- End Sidebar-->
 
@@ -146,7 +152,7 @@
                                                 @if ($row->status == 0)
                                                     <span class="badge bg-warning">Belum Lunas</span>
                                                 @else
-                                                    <span class="badge bg-warning">Lunas</span>
+                                                    <span class="badge bg-success">Lunas</span>
                                                 @endif
                                             </td>
                                             <td>

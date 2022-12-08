@@ -89,6 +89,6 @@ class ReservasiController extends Controller
             'status' => 1
         ]);
 
-        return redirect()->route("jadwal_admin")->with('success', ' Data telah diperbaharui!');
+        return redirect()->route("jadwal_reservasi")->with('success', ' Data telah diperbaharui!');
     }
 }

@@ -237,6 +237,12 @@
                 <i class="bi bi-person"></i>
                 <span>Status Pemesanan</span>
                 </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="#">
+                    <i class="bi bi-person"></i>
+                    <span>Status Transaksi</span>
+                </a>
             </li><!-- End Profile Page Nav -->
     </aside><!-- End Sidebar-->
 

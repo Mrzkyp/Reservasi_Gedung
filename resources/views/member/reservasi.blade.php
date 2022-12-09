@@ -117,11 +117,11 @@
                                             </div>
                                             <div class="col-md-12 position-relative">
                                                 <label for="validationTooltip03" class="form-label">Jenis Reservasi</label>
-                                                <input name="hari_tanggal" type="Date" class="form-control"
-                                                    id="validationTooltip03" required>
-                                                <div class="invalid-tooltip">
-                                                    Please provide a valid city.
-                                                </div>
+                                                <select name="jenis_reservasi" class="form-select" aria-label="Default select example">
+                                                    <option value="Badminton">Badminton</option>
+                                                    <option value="Reserpsi">Resepsi</option>
+                                                    <option value="Kegiatan Desa">Kegiatan Desa</option>
+                                                  </select>
                                             </div>
                                             <div class="col-md-12 position-relative">
                                                 <label for="validationTooltiketerangan"

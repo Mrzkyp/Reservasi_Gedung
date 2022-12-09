@@ -18,6 +18,7 @@ class Reservasi extends Model
         'hari_tanggal',
         'waktu_mulai',
         'waktu_berakhir',
+        'jenis_reservasi',
         'keterangan',
         'status',
     ];

@@ -21,6 +21,7 @@ return new class extends Migration
             $table->string('hari_tanggal');
             $table->string('waktu_mulai');
             $table->string('waktu_berakhir');
+            $table->string('jenis_reservasi');
             $table->string('keterangan');
             $table->string('status');
             $table->timestamps();

@@ -57,6 +57,7 @@ class ReservasiAdminController extends Controller
                     'hari_tanggal' => $request->hari_tanggal,
                     'waktu_mulai' => $request->waktu_mulai,
                     'waktu_berakhir' => $request->waktu_berakhir,
+                    'jenis_reservasi' => $request->jenis_reservasi,
                     'keterangan' => $request->keterangan,
                     'status' => 0,
                 ]);
@@ -77,6 +78,7 @@ class ReservasiAdminController extends Controller
                         'hari_tanggal' => $request->hari_tanggal,
                         'waktu_mulai' => $request->waktu_mulai,
                         'waktu_berakhir' => $request->waktu_berakhir,
+                        'jenis_reservasi' => $request->jenis_reservasi,
                         'keterangan' => $request->keterangan,
                         'status' => 0,
                     ]); 
@@ -105,7 +107,11 @@ class ReservasiAdminController extends Controller
      */
     public function edit($id)
     {
-        //
+        // $data = Reservasi::findOrFail($id);
+        // $this->data['data'] = $data;
+        // return view('admin.edit_pemesanan', $this->data);
+        $data = Reservasi::find($id);
+        return view('admin.edit_pemesanan', compact('data'));
     }
 
     /**

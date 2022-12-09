@@ -60,12 +60,12 @@
                                     <div class="card-body">
                                         <div class="pt-4 pb-2">
                                             <h5 class="card-title text-center pb-0 fs-4">Membuat Reservasi</h5>
-                                            <p class="text-center small">Masukan detail Reservasi</p>
+                                            <p class="text-center small">Pilih detail reservasi yang ingin diubah</p>
                                         </div>
                                         <form class="row g-3 needs-validation" novalidate>
                                             <div class="col-md-12 position-relative">
                                                 <label for="validationTooltip01" class="form-label">Nama Lengkap</label>
-                                                <input name="name" type="text" class="form-control"
+                                                <input name="name" type="text" class="form-control" value="{{ $data->name }}"
                                                     id="validationTooltip01" required>
                                                 <div class="invalid-tooltip">
                                                     Please provide a valid city.

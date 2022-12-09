@@ -205,6 +205,7 @@
                                         <th scope="col">Hari/tanggal</th>
                                         <th scope="col">waktu_mulai</th>
                                         <th scope="col">waktu_berakhir</th>
+                                        <th scope="col">Jenis Reservasi</th>
                                         <th scope="col">Keterangan</th>
                                         <th scope="col">Status Pemesanan</th>
                                         <th scope="col">aksi</th>
@@ -223,6 +224,7 @@
                                         <td>{{ $row->hari_tanggal }}</td>
                                         <td>{{ $row->waktu_mulai }}</td>
                                         <td>{{ $row->waktu_berakhir }}</td>
+                                        <td>{{ $row->jenis_reservasi }}</td>
                                         <td>{{ $row->keterangan }}</td>
                                         <td>
                                             @if ($row->status == 0)
@@ -232,7 +234,7 @@
                                             @endif
                                         </td>
                                         <td>
-                                            <a href="{{ route('accreservasi', $row->id) }}" <button type="button"
+                                            <a href="{{ route('edit', $row->id) }}" <button type="button"
                                                 class="btn btn-warning"><i
                                                     class="bi bi-exclamation-triangle"></i></button>
                                                 <a href="{{ route('delete', $row->id) }}"

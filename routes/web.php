@@ -5,6 +5,7 @@ use App\Http\Controllers\DashboardController;
 Use App\Http\Controllers\JadwalController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ReservasiController;
+use App\Http\Controllers\ReservasiAdminController;
 
 
 /*
@@ -54,6 +55,7 @@ Route::middleware(['auth'])->group(function(){
     Route::get('/status_pemesanan', [ReservasiController::class,'show'])->name('status_pemesanan_admin');
     Route::get('/reservasiadmin', [ReservasiAdminController::class,'index'])->name('reservasiadmin');
     Route::post('/reservasiadmin', [ReservasiAdminController::class,'store'])->name('reservasi-proses2');
+    Route::get('/edit/{id}', [ReservasiController::class, 'edit'])->name('edit');
 
     Route::get('/dashboard-admin', [DashboardController::class,'index'])->name('dashboard_admin');
     Route::get('/profil_member', [AuthController::class,'profil'])->name('profil');

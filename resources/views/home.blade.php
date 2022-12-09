@@ -94,6 +94,7 @@
                                     <td class="table-primary">Hari_tanggal</td>
                                     <td class="table-primary">Waktu_mulai</td>
                                     <td class="table-primary">waktu_berakhir</td>
+                                    <td class="table-primary">jenis_reservasi</td>
                                     <td class="table-primary">Keterangan</td>
                                     <td class="table-primary">Status</td>
                                     <td class="table-primary">Cetak</td>
@@ -110,6 +111,7 @@
                                         <td>{{ $row->hari_tanggal }}</td>
                                         <td>{{ $row->waktu_mulai }}</td>
                                         <td>{{ $row->waktu_berakhir }}</td>
+                                        <td>{{ $row->jenis_reservasi }}</td>
                                         <td>{{ $row->keterangan }}</td>
                                         <td>
                                             @if ($row->status == 0)

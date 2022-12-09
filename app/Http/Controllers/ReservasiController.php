@@ -45,6 +45,7 @@ class ReservasiController extends Controller
                 'hari_tanggal' => $request->hari_tanggal,
                 'waktu_mulai' => $request->waktu_mulai,
                 'waktu_berakhir' => $request->waktu_berakhir,
+                'jenis_reservasi' => $request->jenis_reservasi,
                 'keterangan' => $request->keterangan,
                 'status' => 0,
             ]);
@@ -65,6 +66,7 @@ class ReservasiController extends Controller
                     'hari_tanggal' => $request->hari_tanggal,
                     'waktu_mulai' => $request->waktu_mulai,
                     'waktu_berakhir' => $request->waktu_berakhir,
+                    'jenis_reservasi' => $request->jenis_reservasi,
                     'keterangan' => $request->keterangan,
                     'status' => 0,
                 ]);
@@ -74,13 +76,13 @@ class ReservasiController extends Controller
     }
 
 
-    public function accreservasi(Request $request, $id)
+    public function edit(Request $request)
     {
-        $data = Reservasi::find($id)->update([
+        $data = Reservasi::find()->update([
             'status' => 1
         ]);
 
-        return redirect()->route("jadwal_reservasi")->with('success', ' Data telah diperbaharui!');
+        return redirect()->route("edit")->with('success', ' Data telah diperbaharui!');
     }
     public function delete1($id){
         $data = Reservasi::find($id);

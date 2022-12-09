@@ -131,6 +131,7 @@
                                         <th scope="col">Hari Tanggal</th>
                                         <th scope="col">Waktu Mulai</th>
                                         <th scope="col">Waktu Berakhir</th>
+                                        <th scope="col">Jenis Reservasi</th>
                                         <th scope="col">Keterangan</th>
                                         <th scope="col">Status Pemesanan</th>
                                         <th scope="col">Aksi</th>
@@ -147,6 +148,7 @@
                                             <td>{{ $row->hari_tanggal }}</td>
                                             <td>{{ $row->waktu_mulai }}</td>
                                             <td>{{ $row->waktu_berakhir }}</td>
+                                            <td>{{ $row->jenis_reservasi }}</td>
                                             <td>{{ $row->keterangan }}</td>
                                             <td>
                                                 @if ($row->status == 0)

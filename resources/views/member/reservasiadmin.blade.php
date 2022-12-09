@@ -48,11 +48,11 @@
                 <div class="container">
                     <div class="row justify-content-center">
                         <div class="col-lg-4 col-md-6 d-flex flex-column align-items-center justify-content-center">
-                            <form action="{{ route('reservasi-proses') }}" method="post">
+                            <form action="{{ route('reservasi-proses2') }}" method="post">
                                 @csrf
                                 <div class="d-flex justify-content-center py-4">
                                     <a href="dashboard-admin" class="logo d-flex align-items-center w-auto">
-                                        <img src="assets/img/logo.png" alt="">
+                                        {{-- <img src="assets/img/logo.png" alt=""> --}}
                                         <span class="d-none d-lg-block">Reservasi Gedung</span>
                                     </a>
                                 </div><!-- End Logo -->
@@ -114,6 +114,14 @@
                                                 <div class="invalid-tooltip">
                                                     Please provide a valid city.
                                                 </div>
+                                            </div>
+                                            <div class="col-md-12 position-relative">
+                                                <label for="validationTooltip03" class="form-label">Jenis Reservasi</label>
+                                                <select name="jenis_reservasi" class="form-select" aria-label="Default select example">
+                                                    <option value="Badminto">Badminton</option>
+                                                    <option value="Resepsi">Resepsi</option>
+                                                    <option value="Kegiatan Desa">Kegiatan Desa</option>
+                                                  </select>
                                             </div>
                                             <div class="col-md-12 position-relative">
                                                 <label for="validationTooltiketerangan"

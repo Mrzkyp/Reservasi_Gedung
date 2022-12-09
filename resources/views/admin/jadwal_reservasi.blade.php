@@ -97,7 +97,7 @@
                 </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link collapsed" href="#">
+                <a class="nav-link collapsed" href="status_transaksi">
                     <i class="bi bi-person"></i>
                     <span>Status Transaksi</span>
                 </a>
@@ -157,20 +157,16 @@
                                             </td>
                                             <td>
                                                 <a href="{{ route('accreservasi', $row->id) }}" <button type="button"
-                                                    class="btn btn-warning"><i
-                                                        class="bi bi-exclamation-triangle"></i></button>
+                                                    class="btn btn-warning"><i class="ri-edit-2-line"></i></button>
                                             </td>
                                         </tr>
                                     @endforeach
                                 </tbody>
                             </table>
-
                         </div>
-
                     </div>
                 </div><!-- End Recent Sales -->
             </div><!-- End Right side columns -->
-
             </div>
         </section>
 

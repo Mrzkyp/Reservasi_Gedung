@@ -73,15 +73,6 @@ class ReservasiController extends Controller
         return redirect('/');
     }
 
-    public function tampilkandata1($id)
-    {
-
-        $reservasi = Reservasi::find($id);
-        // dd($reservasi);
-
-        return view('admin.tampildata1', compact('reservasi'));
-    }
-
 
     public function accreservasi(Request $request, $id)
     {
@@ -91,4 +82,11 @@ class ReservasiController extends Controller
 
         return redirect()->route("jadwal_reservasi")->with('success', ' Data telah diperbaharui!');
     }
+    public function delete1($id){
+        $data = Reservasi::find($id);
+        $data->delete();
+
+        return redirect()->route("status_pemesanan_admin")->with("success", "Data berhasil di hapus");
+    }
+
 }

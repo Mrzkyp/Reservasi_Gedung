@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Jadwal;
 use App\Models\Reservasi;
 
 class JadwalController extends Controller
@@ -20,24 +19,6 @@ class JadwalController extends Controller
         $reservasi = Reservasi::latest()->paginate(5);
         return view('admin.jadwal_reservasi', compact('reservasi'));
     }
-
-    public function proses1(Request $request)
-    {
-        Jadwal::create([
-        'name' => $request->name,
-        'hari_tanggal' => $request->hari_tanggal,
-        'waktu' => $request->waktu,
-        'keterangan' => $request->keterangan,
-        ]);
-        return redirect('/jadwal_reservasi');
-    }
-
-    public function tampilkandata($id)
-{
-    $jadwal = Jadwal::find($id);
-    // dd($jadwal);
-    return view ('admin.tampildata', compact('jadwal'));
-}
 
     public function delete($id){
         $data = Reservasi::find($id);

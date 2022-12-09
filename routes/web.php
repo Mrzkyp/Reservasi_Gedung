@@ -5,6 +5,8 @@ use App\Http\Controllers\DashboardController;
 Use App\Http\Controllers\JadwalController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ReservasiController;
+use App\Http\Controllers\ReservasiAdminController;
+use App\Http\Controllers\TransaksiController;
 
 
 /*
@@ -41,19 +43,19 @@ Route::middleware(['auth'])->group(function(){
     Route::get('/logout', [AuthController::class,'destroy'])->name('logout');
 
     //Reservasi
-    Route::get('/tampilkandata1/{id}', [ReservasiController::class, 'tampilkandata1'])->name('tampildata');
     Route::get('/delete1/{id}', [ReservasiController::class, 'delete1'])->name('delete');
     Route::get('/accreservasi/{id}', [ReservasiController::class, 'accreservasi'])->name('accreservasi');
 
     Route::get('/jadwal_reservasi', [JadwalController::class,'show'])->name('jadwal_reservasi');
 
-    Route::get('/tampilkandata/{id}', [JadwalController::class, 'tampilkandata'])->name('tampildata');
-    Route::get('/delete/{id}', [JadwalController::class, 'delete'])->name('delete');
-    Route::post('/updatedata/{id}', [JadwalController::class, 'updatedata'])->name('updatedata');
-
     Route::get('/status_pemesanan', [ReservasiController::class,'show'])->name('status_pemesanan_admin');
+    Route::get('/delete/{id}', [JadwalController::class, 'delete'])->name('delete');
+
     Route::get('/reservasiadmin', [ReservasiAdminController::class,'index'])->name('reservasiadmin');
     Route::post('/reservasiadmin', [ReservasiAdminController::class,'store'])->name('reservasi-proses2');
+
+    Route::get('/status_transaksi', [TransaksiController::class,'index'])->name('status_transaksi');
+    Route::get('/status_transaksi_admin', [TransaksiController::class,'show'])->name('status_transaksi_admin');
 
     Route::get('/dashboard-admin', [DashboardController::class,'index'])->name('dashboard_admin');
     Route::get('/profil_member', [AuthController::class,'profil'])->name('profil');

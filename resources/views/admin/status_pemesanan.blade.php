@@ -193,7 +193,7 @@
                         <div class="card-body">
                             <h5 class="card-title">Status Pemesanan</h5>
                             <table class="table table-borderless">
-                                <a href="reservasi" class="btn btn-success"><span class="ri-add-box-fill"></span></a>
+                                <a href="reservasiadmin" class="btn btn-success"><span class="ri-add-box-fill"></span></a>
                             <br>
                             <br>
                                 <thead>
@@ -228,7 +228,7 @@
                                             @if ($row->status == 0)
                                             <span class="badge bg-warning">Belum Lunas</span>
                                             @else
-                                            <span class="badge bg-warning">Lunas</span>
+                                            <span class="badge bg-success">Lunas</span>
                                             @endif
                                         </td>
                                         <td>

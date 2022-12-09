@@ -67,7 +67,7 @@ class ReservasiController extends Controller
                     'waktu_berakhir' => $request->waktu_berakhir,
                     'keterangan' => $request->keterangan,
                     'status' => 0,
-                ]); 
+                ]);
             }
         }
         return redirect('/');

@@ -96,6 +96,7 @@
                                     <td class="table-primary">waktu_berakhir</td>
                                     <td class="table-primary">Keterangan</td>
                                     <td class="table-primary">Status</td>
+                                    <td class="table-primary">Cetak</td>
                                 </tr>
                             </thead>
                             <tbody>
@@ -116,6 +117,12 @@
                                             @else
                                                 <span>Lunas</span>
                                             @endif
+                                        </td>
+                                        <td>
+                                            <a href="#" <button type="button"
+                                                class="btn btn-secondary">
+                                                <i class="bx bxs-download"></i></button>
+                                            </a>
                                         </td>
                                     </tr>
                                 @endforeach

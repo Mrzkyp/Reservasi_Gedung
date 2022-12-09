@@ -116,14 +116,6 @@
                                                 </div>
                                             </div>
                                             <div class="col-md-12 position-relative">
-                                                <label for="validationTooltip03" class="form-label">Jenis Reservasi</label>
-                                                <input name="hari_tanggal" type="Date" class="form-control"
-                                                    id="validationTooltip03" required>
-                                                <div class="invalid-tooltip">
-                                                    Please provide a valid city.
-                                                </div>
-                                            </div>
-                                            <div class="col-md-12 position-relative">
                                                 <label for="validationTooltiketerangan"
                                                     class="form-label">Keterangan</label>
                                                 <div class="input-group has-validation">

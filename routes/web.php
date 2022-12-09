@@ -52,7 +52,8 @@ Route::middleware(['auth'])->group(function(){
     Route::post('/updatedata/{id}', [JadwalController::class, 'updatedata'])->name('updatedata');
 
     Route::get('/status_pemesanan', [ReservasiController::class,'show'])->name('status_pemesanan_admin');
-    Route::get('/profil', [AuthController::class,'profil'])->name('profil');
+    Route::get('/reservasiadmin', [ReservasiAdminController::class,'index'])->name('reservasiadmin');
+    Route::post('/reservasiadmin', [ReservasiAdminController::class,'store'])->name('reservasi-proses2');
 
     Route::get('/dashboard-admin', [DashboardController::class,'index'])->name('dashboard_admin');
     Route::get('/profil_member', [AuthController::class,'profil'])->name('profil');

@@ -91,4 +91,12 @@ class ReservasiController extends Controller
         return redirect()->route("status_pemesanan_admin")->with("success", "Data berhasil di hapus");
     }
 
+
+    public function tampilkandata($id) {
+
+        return $data = Reservasi::find($id);
+        // dd($data);
+
+        return view('admin.tampildata', compact('data'));
+    }
 }

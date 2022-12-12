@@ -165,12 +165,6 @@
                     <i class="bi bi-person"></i>
                     <span>Status Pemesanan</span>
                 </a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link collapsed" href="status_transaksi">
-                    <i class="bi bi-person"></i>
-                    <span>Status Transaksi</span>
-                </a>
             </li><!-- End Profile Page Nav -->
     </aside><!-- End Sidebar-->
 
@@ -194,6 +188,7 @@
                             <h5 class="card-title">Status Pemesanan</h5>
                             <table class="table table-borderless">
                                 <a href="reservasiadmin" class="btn btn-success"><span class="ri-add-box-fill"></span></a>
+                                <a href="#" <button type="button" class="btn btn-secondary"> <i class="bx bxs-download"></i></button></a>
                             <br>
                             <br>
                                 <thead>
@@ -234,14 +229,8 @@
                                             @endif
                                         </td>
                                         <td>
-<<<<<<< HEAD
-                                            <a href="{{ route('accreservasi', $row->id) }}" <button type="button"
-                                                class="btn btn-warning"><i class="ri-edit-2-line"></i></button>
-=======
-                                            <a href="{{ route('edit', $row->id) }}" <button type="button"
-                                                class="btn btn-warning"><i
-                                                    class="bi bi-exclamation-triangle"></i></button>
->>>>>>> 618fb6661ba368398fa23af6702eddfe72330a2e
+                                            <a href="/edit_pemesanan/{{$row->id}}"
+                                                class="btn btn-warning"><i class="ri-edit-2-line"></i>
                                                 <a href="{{ route('delete', $row->id) }}"
                                                     onclick="return confirm('Apakah Ingin menghapus data ini?')"
                                                     class="btn btn-danger delete" reservasi-id="{{ $row->id }}"

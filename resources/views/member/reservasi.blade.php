@@ -121,7 +121,7 @@
                                                     <option value="Badminton">Badminton</option>
                                                     <option value="Reserpsi">Resepsi</option>
                                                     <option value="Kegiatan Desa">Kegiatan Desa</option>
-                                                  </select>
+                                                </select>
                                             </div>
                                             <div class="col-md-12 position-relative">
                                                 <label for="validationTooltiketerangan"

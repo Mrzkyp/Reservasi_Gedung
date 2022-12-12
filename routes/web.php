@@ -53,10 +53,14 @@ Route::middleware(['auth'])->group(function(){
 
     Route::get('/reservasiadmin', [ReservasiAdminController::class,'index'])->name('reservasiadmin');
     Route::post('/reservasiadmin', [ReservasiAdminController::class,'store'])->name('reservasi-proses2');
-    Route::get('/edit/{id}', [ReservasiController::class, 'edit'])->name('edit');
+    
 
-    Route::get('/status_transaksi', [TransaksiController::class,'index'])->name('status_transaksi');
-    Route::get('/status_transaksi_admin', [TransaksiController::class,'show'])->name('status_transaksi_admin');
+
+    //edit status pemesanan
+    Route::post('/updatedata/{id}', [ReservasiAdminController::class, 'update'])->name('updatedata');
+    Route::get('/edit_pemesanan/{id}', [ReservasiAdminController::class, 'edit'])->name('edit_pemesanan');
+    
+    // Route::get('/tampildata/{id}', [ReservasiAdminController::class,])
 
     Route::get('/dashboard-admin', [DashboardController::class,'index'])->name('dashboard_admin');
     Route::get('/profil_member', [AuthController::class,'profil'])->name('profil');

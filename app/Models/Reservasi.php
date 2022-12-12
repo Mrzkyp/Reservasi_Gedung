@@ -11,16 +11,19 @@ class Reservasi extends Model
     
     protected $table = 'reservasi';
     protected $primaryKey = 'id';
-    protected $fillable =[
-        'name',
-        'notelepon',
-        'alamat',
-        'hari_tanggal',
-        'waktu_mulai',
-        'waktu_berakhir',
-        'jenis_reservasi',
-        'keterangan',
-        'status',
-    ];
+    
+    // protected $fillable =[
+    //     'name',
+    //     'notelepon',
+    //     'alamat',
+    //     'hari_tanggal',
+    //     'waktu_mulai',
+    //     'waktu_berakhir',
+    //     'jenis_reservasi',
+    //     'keterangan',
+    //     'status',
+    // ];
+
+    protected $guarded = [""];
     
 }

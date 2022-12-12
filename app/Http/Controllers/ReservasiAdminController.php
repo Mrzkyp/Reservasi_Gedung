@@ -111,6 +111,7 @@ class ReservasiAdminController extends Controller
         // $this->data['data'] = $data;
         // return view('admin.edit_pemesanan', $this->data);
         $data = Reservasi::find($id);
+        // dd($data);
         return view('admin.edit_pemesanan', compact('data'));
     }
 
@@ -123,11 +124,14 @@ class ReservasiAdminController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $data = Reservasi::find($id);
+        $data->update($request->all());
+
+        return redirect()->route("status_pemesanan_admin")->with('success', ' Data telah diperbaharui!');
     }
 
     /**
-     * Remove the specified resource from storage.
+ * Remove the specified resource from storage
      *
      * @param  int  $id
      * @return \Illuminate\Http\Response

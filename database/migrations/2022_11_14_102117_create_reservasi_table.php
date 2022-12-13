@@ -19,6 +19,7 @@ return new class extends Migration
             $table->string('notelepon');
             $table->string('alamat');
             $table->string('hari_tanggal');
+            $table->string('hari_berakhir')->nullable();
             $table->string('waktu_mulai');
             $table->string('waktu_berakhir');
             $table->string('jenis_reservasi');

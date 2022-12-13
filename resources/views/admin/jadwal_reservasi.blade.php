@@ -123,7 +123,8 @@
                                         <th scope="col">No</th>
                                         <th scope="col">Nama</th>
                                         <th scope="col">Hari Tanggal</th>
-                                        <th scope="col">Waktu Mulai</th>
+                                        <th scope="col">Tanggal Berakhir</th>
+                                        <th scope="col">Waktu Berakhir</th>
                                         <th scope="col">Waktu Berakhir</th>
                                         <th scope="col">Jenis Reservasi</th>
                                         <th scope="col">Keterangan</th>
@@ -140,6 +141,7 @@
                                             <th scope="row">{{ $no++ }}</th>
                                             <td>{{ $row->name }}</td>
                                             <td>{{ $row->hari_tanggal }}</td>
+                                            <td>{{ $row->hari_berakhir ??  '-' }}</td>
                                             <td>{{ $row->waktu_mulai }}</td>
                                             <td>{{ $row->waktu_berakhir }}</td>
                                             <td>{{ $row->jenis_reservasi }}</td>

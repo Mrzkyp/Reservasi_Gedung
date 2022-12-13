@@ -68,7 +68,7 @@
                                                 <input name="name" type="text" class="form-control"
                                                     id="validationTooltip01" required>
                                                 <div class="invalid-tooltip">
-                                                    Please provide a valid city.
+                                                    Masukan Nama Lengkap.
                                                 </div>
                                             </div>
                                             <div class="col-md-12 position-relative">
@@ -76,7 +76,7 @@
                                                 <input name="notelepon" type="number" class="form-control"
                                                     id="validationTooltip02" required>
                                                 <div class="invalid-tooltip">
-                                                    Please provide a valid city.
+                                                    Masukan Nomor Telepon.
                                                 </div>
                                             </div>
                                             <div class="col-md-12 position-relative">
@@ -86,7 +86,7 @@
                                                         id="validationTooltipalamat"
                                                         aria-describedby="validationTooltipalamatPrepend" required>
                                                     <div class="invalid-tooltip">
-                                                        Please provide a valid city.
+                                                        Masukan Alamat Lengkap.
                                                     </div>
                                                 </div>
                                             </div>
@@ -95,7 +95,7 @@
                                                 <input name="waktu_mulai" type="time" class="form-control"
                                                     id="validationTooltip01" required>
                                                 <div class="invalid-tooltip">
-                                                    Please provide a valid city.
+                                                    Masukan Waktu Mulai.
                                                 </div>
                                             </div>
                                             <div class="col-md-12 position-relative">
@@ -104,7 +104,7 @@
                                                 <input name="waktu_berakhir" type="time" class="form-control"
                                                     id="validationTooltip01" required>
                                                 <div class="invalid-tooltip">
-                                                    Please provide a valid city.
+                                                    Masukan Waktu Berakhir.
                                                 </div>
                                             </div>
                                             <div class="col-md-12 position-relative">
@@ -112,7 +112,7 @@
                                                 <input name="hari_tanggal" type="Date" class="form-control"
                                                     id="validationTooltip03" required>
                                                 <div class="invalid-tooltip">
-                                                    Please provide a valid city.
+                                                    Masukan Tanggal Reservasi.
                                                 </div>
                                             </div>
                                             <div class="col-md-12 position-relative">
@@ -131,7 +131,7 @@
                                                         id="validationTooltipketerangan"
                                                         aria-describedby="validationTooltiketeranganPrepend" required>
                                                     <div class="invalid-tooltip">
-                                                        Please provide a valid city.
+                                                        Masukan Keterangan.
                                                     </div>
                                                 </div>
                                             </div>

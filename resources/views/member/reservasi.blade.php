@@ -136,11 +136,14 @@
                                                 </div>
                                             </div>
                                             <center>
-                                                <div class="col-12">
+                                                <div class="col-12 mt-3">
                                                     <button class="btn btn-primary" type="submit">Submit</button>
                                                 </div>
                                             </center>
                                         </form>
+                                        @if(Session::get('sukses'))
+                                        Segera Download Data Reservasi Kamu Di <a href="{{route('download_data_jadi')}}">Download</a>
+                                        @endif
                                     </div>
                                 </div>
                             </form>

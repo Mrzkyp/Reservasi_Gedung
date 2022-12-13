@@ -188,7 +188,6 @@
                             <h5 class="card-title">Status Pemesanan</h5>
                             <table class="table table-borderless">
                                 <a href="reservasiadmin" class="btn btn-success"><span class="ri-add-box-fill"></span></a>
-                                <a href="#" <button type="button" class="btn btn-secondary"> <i class="bx bxs-download"></i></button></a>
                             <br>
                             <br>
                                 <thead>
@@ -203,6 +202,7 @@
                                         <th scope="col">Jenis Reservasi</th>
                                         <th scope="col">Keterangan</th>
                                         <th scope="col">Status Pemesanan</th>
+                                        <th scope="col">Download Data</th>
                                         <th scope="col">aksi</th>
                                     </tr>
                                 </thead>
@@ -227,6 +227,12 @@
                                             @else
                                             <span class="badge bg-success">Lunas</span>
                                             @endif
+                                        </td>
+                                        <td>
+                                            <a href="{{route('download_data', $row->id)}}" <button type="button"
+                                                class="btn btn-secondary">
+                                                <i class="bx bxs-download"></i></button>
+                                            </a>
                                         </td>
                                         <td>
                                             <a href="/edit_pemesanan/{{$row->id}}"

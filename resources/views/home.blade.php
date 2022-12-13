@@ -17,6 +17,7 @@
     <link
         href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
         rel="stylesheet">
+        <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
     <!-- Vendor CSS Files -->
     <link href="Bethany/assets/vendor/aos/aos.css" rel="stylesheet">
@@ -39,7 +40,7 @@
 </head>
 
 <body>
-
+<x-alert />
     <!-- ======= Header ======= -->
     <header id="header" class="fixed-top d-flex align-items-center">
         <div class="container">
@@ -59,7 +60,7 @@
                         <li><a class="nav-link scrollto active" href="#hero">Home</a></li>
                         <li><a class="nav-link scrollto" href="#jadwal">Jadwal Reservasi</a></li>
                         <li><a class="nav-link scrollto" href="#cta">Reservasi Gedung</a></li>
-                        <li><a class="getstarted scrollto" href="/login-admin">Login</a></li>
+                        <li><a class="getstarted scrollto" href="/login">Login</a></li>
                     @endif
                     </ul>
                     <i class="bi bi-list mobile-nav-toggle"></i>
@@ -82,7 +83,7 @@
         <section id="jadwal" class="jadwal">
             <div class="container">
                 <div class="row">
-                    <div class="row">
+                    <div class="row table-responsive">
                         <center>
                             <h1>Jadwal Reservasi</h1>
                         </center>
@@ -97,7 +98,6 @@
                                     <td class="table-primary">jenis_reservasi</td>
                                     <td class="table-primary">Keterangan</td>
                                     <td class="table-primary">Status</td>
-                                    <td class="table-primary">Cetak</td>
                                 </tr>
                             </thead>
                             <tbody>
@@ -117,22 +117,22 @@
                                             @if ($row->status == 0)
                                                 <span>Belum Lunas</span>
                                             @else
-                                                <span>Lunas</span>
+                                                <span>Aktif</span>
                                             @endif
                                         </td>
-                                        <td>
-                                            <a href="#" <button type="button"
-                                                class="btn btn-secondary">
-                                                <i class="bx bxs-download"></i></button>
-                                            </a>
-                                        </td>
+                                    
                                     </tr>
                                 @endforeach
                             </tbody>
                         </table>
+
+
+                        
                         {{ $reservasi->links() }}
                         </table>
                     </div>
+
+
                 </div>
             </div>
         </section>

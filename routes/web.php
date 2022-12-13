@@ -6,7 +6,6 @@ Use App\Http\Controllers\JadwalController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ReservasiController;
 use App\Http\Controllers\ReservasiAdminController;
-use App\Http\Controllers\TransaksiController;
 
 
 /*
@@ -21,6 +20,16 @@ use App\Http\Controllers\TransaksiController;
 */
 //Home
 Route::get('/', [DashboardController::class,'show'])->name('home');
+
+//pdf Sudah Lunas
+Route::get('/download_data/{id}', [DashboardController::class, 'download_data'])->name('download_data');
+
+//pdf belum lunas
+Route::get('/download_data_blm/{id}', [DashboardController::class, 'download_data_blm'])->name('download_data_blm');
+
+//pdf ketika Reservasi baru
+Route::get('/download_data_jadi', [ReservasiController::class, 'download_data_jadi'])->name('download_data_jadi');
+
 
 //Login Admin
 Route::get('/login-admin', [AuthController::class,'index1'])->name('login-admin');
@@ -38,6 +47,7 @@ Route::post('/register', [AuthController::class,'store'])->name('register-proses
 Route::get('/reservasi', [ReservasiController::class,'pesan'])->name('reservasi');
 Route::post('/reservasi', [ReservasiController::class,'proses1'])->name('reservasi-proses');
 
+//logout
 Route::middleware(['auth'])->group(function(){
     Route::get('/home',[DashboardController::class,'index'])->name('Home');
     Route::get('/logout', [AuthController::class,'destroy'])->name('logout');
@@ -46,7 +56,9 @@ Route::middleware(['auth'])->group(function(){
     Route::get('/delete1/{id}', [ReservasiController::class, 'delete1'])->name('delete');
     Route::get('/accreservasi/{id}', [ReservasiController::class, 'accreservasi'])->name('accreservasi');
 
+    //jadwal_reservasi
     Route::get('/jadwal_reservasi', [JadwalController::class,'show'])->name('jadwal_reservasi');
+
 
     Route::get('/status_pemesanan', [ReservasiController::class,'show'])->name('status_pemesanan_admin');
     Route::get('/delete/{id}', [JadwalController::class, 'delete'])->name('delete');

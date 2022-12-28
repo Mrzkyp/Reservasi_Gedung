@@ -17,8 +17,13 @@ class ReservasiController extends Controller
         $back = $this->getDateBack();
 
         $cek = Reservasi::latest();
-        
-        return view('member.reservasi', compact('now', 'back', 'cek'));
+         
+        if(Auth::check()){
+            $read = 'readonly';
+        }else{
+            $read = '';
+        }
+        return view('member.reservasi', compact('now', 'back', 'cek', 'read'));
     }
     public function download_data_jadi(){
         $data = Reservasi::latest()->first();
@@ -38,7 +43,7 @@ class ReservasiController extends Controller
     }
     public function getDateBack()
     {
-        return date('Y-m-d', strtotime(Carbon::today()->addDays(31)->toDateString()));
+        return date('Y-m-d', strtotime(Carbon::today()->addDays(30)->toDateString()));
     }
 
     public function proses1(Request $request)
@@ -133,21 +138,12 @@ class ReservasiController extends Controller
             'status' => 1
         ]);
 
-        return redirect()->back()->with('success', ' Data telah diperbaharui!');
+        return redirect()->back()->with('sukses', ' Data telah diperbaharui!');
     }
     public function delete1($id){
         $data = Reservasi::find($id);
         $data->delete();
 
-        return redirect()->route("status_pemesanan_admin")->with("success", "Data berhasil di hapus");
-    }
-
-
-    public function tampilkandata($id) {
-
-        return $data = Reservasi::find($id);
-        // dd($data);
-
-        return view('admin.tampildata', compact('data'));
+        return redirect()->route("status_pemesanan_admin")->with("sukses", "Data berhasil di hapus");
     }
 }

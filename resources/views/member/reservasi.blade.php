@@ -30,6 +30,7 @@
 
     <!-- Template Main CSS File -->
     <link href="assets/css/style.css" rel="stylesheet">
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
     <!-- =======================================================
   * Template Name: NiceAdmin - v2.4.1
@@ -42,7 +43,7 @@
 <body>
     <main>
         <div class="container">
-
+            <x-alert />
             <section
                 class="section register min-vh-100 d-flex flex-column align-items-center justify-content-center py-4">
                 <div class="container">
@@ -65,7 +66,8 @@
                                         <form class="row g-3 needs-validation" novalidate>
                                             <div class="col-md-12 position-relative">
                                                 <label for="validationTooltip01" class="form-label">Nama Lengkap</label>
-                                                <input name="name" type="text" class="form-control"
+                                                <input name="name" type="text" class="form-control" 
+                                                value = "{{ auth()->user()->name ?? ''}}" {{$read}}
                                                     id="validationTooltip01" required>
                                                 <div class="invalid-tooltip">
                                                     Please provide a valid city.
@@ -73,7 +75,8 @@
                                             </div>
                                             <div class="col-md-12 position-relative">
                                                 <label for="validationTooltip02" class="form-label">No Telepon</label>
-                                                <input name="notelepon" type="number" class="form-control"
+                                                <input name="notelepon" type="number" class="form-control" 
+                                                value = "{{ auth()->user()->notelepon ?? ''}}" {{$read}}
                                                     id="validationTooltip02" required>
                                                 <div class="invalid-tooltip">
                                                     Please provide a valid city.
@@ -82,7 +85,8 @@
                                             <div class="col-md-12 position-relative">
                                                 <label for="validationTooltipalamat" class="form-label">Alamat</label>
                                                 <div class="input-group has-validation">
-                                                <input name="alamat" type="text" class="form-control"
+                                                <input name="alamat" type="text" class="form-control" 
+                                                value = "{{ auth()->user()->alamat ?? ''}}" {{$read}}
                                                         id="validationTooltipalamat"
                                                         aria-describedby="validationTooltipalamatPrepend" required>
                                                     <div class="invalid-tooltip">
@@ -119,7 +123,7 @@
                                                 <label for="validationTooltip03" class="form-label">Jenis Reservasi</label>
                                                 <select name="jenis_reservasi" class="form-select" aria-label="Default select example">
                                                     <option value="Badminton">Badminton</option>
-                                                    <option value="Reserpsi">Resepsi</option>
+                                                    <option value="Resepsi">Resepsi</option>
                                                     <option value="Kegiatan Desa">Kegiatan Desa</option>
                                                 </select>
                                             </div>
@@ -143,6 +147,8 @@
                                         </form>
                                         @if(Session::get('sukses'))
                                         Segera Download Data Reservasi Kamu Di <a href="{{route('download_data_jadi')}}">Download</a>
+                                        @elseif(Session::get('gagal'))
+                                        Jadwal Sudah ada Silahkan Reservasi ulang ditanggal yang berbeda
                                         @endif
                                     </div>
                                 </div>

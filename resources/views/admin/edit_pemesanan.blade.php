@@ -31,6 +31,7 @@
 
     <!-- Template Main CSS File -->
     <link href="assets/css/style.css" rel="stylesheet">
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 
     <!-- =======================================================
@@ -43,6 +44,7 @@
 
 <body>
     <main>
+        <x-alert />
         <div class="container">
             <section
                 class="section register min-vh-100 d-flex flex-column align-items-center justify-content-center py-4">

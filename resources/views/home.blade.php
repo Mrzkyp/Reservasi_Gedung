@@ -90,15 +90,16 @@
                         <table class="table">
                             <thead>
                                 <tr>
-                                    <td class="table-primary">No</td>
-                                    <td class="table-primary">Nama</td>
-                                    <td class="table-primary">Hari_tanggal</td>
-                                    <td class="table-primary">Waktu_mulai</td>
-                                    <td class="table-primary">waktu_berakhir</td>
-                                    <td class="table-primary">jenis_reservasi</td>
-                                    <td class="table-primary">Keterangan</td>
-                                    <td class="table-primary">Status</td>
+                                    <th class="table-primary">No</th>
+                                    <th class="table-primary">Nama</th>
+                                    <th class="table-primary">Hari Tanggal</th>
+                                    <th class="table-primary">Hari Berakhir</th>
+                                    <th class="table-primary">Waktu</th>
+                                    <th class="table-primary">jenis Reservasi</th>
+                                    <th class="table-primary">Keterangan</th>
+                                    <th class="table-primary">Status</th>
                                 </tr>
+                                
                             </thead>
                             <tbody>
                                 @php
@@ -109,8 +110,14 @@
                                         <th scope="row">{{ $no++ }}</th>
                                         <td>{{ $row->name }}</td>
                                         <td>{{ $row->hari_tanggal }}</td>
-                                        <td>{{ $row->waktu_mulai }}</td>
-                                        <td>{{ $row->waktu_berakhir }}</td>
+                                        <td>
+                                            @if ($row->hari_berakhir == null)
+                                            <strong> - </strong>
+                                            @else
+                                            {{ $row->hari_berakhir }}
+                                            @endif
+                                        </td>
+                                        <td>{{ $row->waktu_mulai }} S/d {{ $row->waktu_berakhir }}</td>
                                         <td>{{ $row->jenis_reservasi }}</td>
                                         <td>{{ $row->keterangan }}</td>
                                         <td>
@@ -125,8 +132,6 @@
                                 @endforeach
                             </tbody>
                         </table>
-
-
                         
                         {{ $reservasi->links() }}
                         </table>

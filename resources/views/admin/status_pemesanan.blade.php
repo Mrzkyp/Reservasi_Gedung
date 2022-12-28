@@ -100,7 +100,8 @@
 
     <!-- Template Main CSS File -->
     <link href="assets/css/style.css" rel="stylesheet">
-
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    
     <!-- =======================================================
               * Template Name: NiceAdmin - v2.4.1
               * Template URL: https://bootstrapmade.com/nice-admin-bootstrap-admin-html-template/
@@ -110,7 +111,7 @@
 </head>
 
 <body>
-
+    <x-alert />
     <!-- ======= Header ======= -->
     <header id="header" class="header fixed-top d-flex align-items-center">
 
@@ -148,7 +149,7 @@
         <ul class="sidebar-nav" id="sidebar-nav">
 
             <li class="nav-item">
-                <a class="nav-link " href="dashboard-admin">
+                <a class="nav-link collapsed"" href="dashboard-admin">
                     <i class="bi bi-grid"></i>
                     <span>Dashboard</span>
                 </a>
@@ -161,7 +162,7 @@
                 </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link collapsed" href="status_pemesanan">
+                <a class="nav-link" href="status_pemesanan">
                     <i class="bi bi-person"></i>
                     <span>Status Pemesanan</span>
                 </a>
@@ -196,9 +197,9 @@
                                         <th scope="col">Nama</th>
                                         <th scope="col">No Telepon</th>
                                         <th scope="col">Alamat</th>
-                                        <th scope="col">Hari/tanggal</th>
-                                        <th scope="col">waktu_mulai</th>
-                                        <th scope="col">waktu_berakhir</th>
+                                        <th scope="col">Tanggal Mulai</th>
+                                        <th scope="col">Tanggal Berakhir</th>
+                                        <th scope="col">Waktu</th>
                                         <th scope="col">Jenis Reservasi</th>
                                         <th scope="col">Keterangan</th>
                                         <th scope="col">Status Pemesanan</th>
@@ -217,8 +218,14 @@
                                         <td>{{ $row->notelepon }}</td>
                                         <td>{{ $row->alamat }}</td>
                                         <td>{{ $row->hari_tanggal }}</td>
-                                        <td>{{ $row->waktu_mulai }}</td>
-                                        <td>{{ $row->waktu_berakhir }}</td>
+                                        <td>
+                                            @if ($row->hari_berakhir == null)
+                                            <strong> - </strong>
+                                            @else
+                                            {{ $row->hari_berakhir }}
+                                            @endif
+                                        </td>
+                                        <td>{{ $row->waktu_mulai }} S/d {{ $row->waktu_berakhir }}</td>
                                         <td>{{ $row->jenis_reservasi }}</td>
                                         <td>{{ $row->keterangan }}</td>
                                         <td>

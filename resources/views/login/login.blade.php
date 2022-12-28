@@ -10,8 +10,8 @@
 
     <!-- <link rel="canonical" href="https://getbootstrap.com/docs/5.2/examples/sign-in/"> -->
 
-    
 
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     
 
 <link href="{{ asset('assets/dist/css/bootstrap.min.css') }}" rel="stylesheet">
@@ -74,7 +74,7 @@
     <link href="{{ ('bootstrap-5.2.2-examples/sign-in/signin.css') }}" rel="stylesheet">
   </head>
   <body class="text-center">
-    
+    <x-alert />
 <main class="form-signin w-100 m-auto">
   <form action="{{route('login-proses')}}" method="post">    
     @csrf
@@ -85,7 +85,7 @@
       <label for="floatingInput">Email address</label>
     </div>
     <div class="form-floating">
-      <input name="password" type="password" class="form-control" id="floatingPassword" placeholder="password">
+      <input name="password" type="password" class="form-control" min="8" id="floatingPassword" placeholder="password">
       <label for="floatingPassword">Password</label>
     </div>
 

@@ -30,7 +30,8 @@
 
     <!-- Template Main CSS File -->
     <link href="assets/css/style.css" rel="stylesheet">
-
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    
     <!-- =======================================================
               * Template Name: NiceAdmin - v2.4.1
               * Template URL: https://bootstrapmade.com/nice-admin-bootstrap-admin-html-template/
@@ -40,7 +41,7 @@
 </head>
 
 <body>
-
+    <x-alert />
     <!-- ======= Header ======= -->
     <header id="header" class="header fixed-top d-flex align-items-center">
 
@@ -78,14 +79,14 @@
         <ul class="sidebar-nav" id="sidebar-nav">
 
             <li class="nav-item">
-                <a class="nav-link " href="dashboard-admin">
+                <a class="nav-link collapsed" " href="dashboard-admin">
                     <i class="bi bi-grid"></i>
                     <span>Dashboard</span>
                 </a>
             </li><!-- End Dashboard Nav -->
 
             <li class="nav-item">
-                <a class="nav-link collapsed" href="jadwal_reservasi">
+                <a class="nav-link" href="jadwal_reservasi">
                     <i class="bi bi-person"></i>
                     <span>Jadwal Reservasi</span>
                 </a>
@@ -124,8 +125,7 @@
                                         <th scope="col">Nama</th>
                                         <th scope="col">Hari Tanggal</th>
                                         <th scope="col">Tanggal Berakhir</th>
-                                        <th scope="col">Waktu Berakhir</th>
-                                        <th scope="col">Waktu Berakhir</th>
+                                        <th scope="col">Waktu</th>
                                         <th scope="col">Jenis Reservasi</th>
                                         <th scope="col">Keterangan</th>
                                         <th scope="col">Status Pemesanan</th>
@@ -141,9 +141,14 @@
                                             <th scope="row">{{ $no++ }}</th>
                                             <td>{{ $row->name }}</td>
                                             <td>{{ $row->hari_tanggal }}</td>
-                                            <td>{{ $row->hari_berakhir ??  '-' }}</td>
-                                            <td>{{ $row->waktu_mulai }}</td>
-                                            <td>{{ $row->waktu_berakhir }}</td>
+                                            <td>
+                                                @if ($row->hari_berakhir == null)
+                                                <strong> - </strong>
+                                                @else
+                                                {{ $row->hari_berakhir }}
+                                                @endif
+                                            </td>
+                                            <td>{{ $row->waktu_mulai }} S/d {{ $row->waktu_berakhir }}</td>
                                             <td>{{ $row->jenis_reservasi }}</td>
                                             <td>{{ $row->keterangan }}</td>
                                             <td>

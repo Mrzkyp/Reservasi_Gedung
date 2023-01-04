@@ -31,7 +31,7 @@
     <!-- Template Main CSS File -->
     <link href="assets/css/style.css" rel="stylesheet">
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-    
+
     <!-- =======================================================
               * Template Name: NiceAdmin - v2.4.1
               * Template URL: https://bootstrapmade.com/nice-admin-bootstrap-admin-html-template/
@@ -143,7 +143,7 @@
                                             <td>{{ $row->hari_tanggal }}</td>
                                             <td>
                                                 @if ($row->hari_berakhir == null)
-                                                <strong> - </strong>
+                                                {{$row->hari_tanggal}}
                                                 @else
                                                 {{ $row->hari_berakhir }}
                                                 @endif

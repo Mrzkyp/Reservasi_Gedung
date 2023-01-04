@@ -17,7 +17,7 @@ class ReservasiController extends Controller
         $back = $this->getDateBack();
 
         $cek = Reservasi::latest();
-         
+
         if(Auth::check()){
             $read = 'readonly';
         }else{
@@ -50,7 +50,7 @@ class ReservasiController extends Controller
     {
         $data = Reservasi::where('hari_tanggal', $request->hari_tanggal)->get();
         if(Auth::check()){
-        
+
         if(Auth::user()->role == 'member'){
             if ($data->count() == '0') {
                 Reservasi::create([
@@ -127,7 +127,7 @@ class ReservasiController extends Controller
                 ]);
             }
         }
-        return redirect()->back()->with('sukses', 'Berhasil Reservasi, Harap Download File PDF Sebagai Tanda Bukti');
+        return redirect()->back()->with('gagal', 'Data sudah ada');
     }
     }
 

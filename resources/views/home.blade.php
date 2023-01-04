@@ -99,7 +99,6 @@
                                     <th class="table-primary">Keterangan</th>
                                     <th class="table-primary">Status</th>
                                 </tr>
-                                
                             </thead>
                             <tbody>
                                 @php
@@ -112,7 +111,7 @@
                                         <td>{{ $row->hari_tanggal }}</td>
                                         <td>
                                             @if ($row->hari_berakhir == null)
-                                            <strong> - </strong>
+                                            {{$row->hari_tanggal}}
                                             @else
                                             {{ $row->hari_berakhir }}
                                             @endif
@@ -127,12 +126,12 @@
                                                 <span>Aktif</span>
                                             @endif
                                         </td>
-                                    
+
                                     </tr>
                                 @endforeach
                             </tbody>
                         </table>
-                        
+
                         {{ $reservasi->links() }}
                         </table>
                     </div>

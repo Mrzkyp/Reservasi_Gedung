@@ -66,7 +66,7 @@
                                         <form class="row g-3 needs-validation" novalidate>
                                             <div class="col-md-12 position-relative">
                                                 <label for="validationTooltip01" class="form-label">Nama Lengkap</label>
-                                                <input name="name" type="text" class="form-control" 
+                                                <input name="name" type="text" class="form-control"
                                                 value = "{{ auth()->user()->name ?? ''}}" {{$read}}
                                                     id="validationTooltip01" required>
                                                 <div class="invalid-tooltip">
@@ -75,7 +75,7 @@
                                             </div>
                                             <div class="col-md-12 position-relative">
                                                 <label for="validationTooltip02" class="form-label">No Telepon</label>
-                                                <input name="notelepon" type="number" class="form-control" 
+                                                <input name="notelepon" type="number" class="form-control"
                                                 value = "{{ auth()->user()->notelepon ?? ''}}" {{$read}}
                                                     id="validationTooltip02" required>
                                                 <div class="invalid-tooltip">
@@ -85,7 +85,7 @@
                                             <div class="col-md-12 position-relative">
                                                 <label for="validationTooltipalamat" class="form-label">Alamat</label>
                                                 <div class="input-group has-validation">
-                                                <input name="alamat" type="text" class="form-control" 
+                                                <input name="alamat" type="text" class="form-control"
                                                 value = "{{ auth()->user()->alamat ?? ''}}" {{$read}}
                                                         id="validationTooltipalamat"
                                                         aria-describedby="validationTooltipalamatPrepend" required>
